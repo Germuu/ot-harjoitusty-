@@ -1,4 +1,4 @@
-# HARJOITUSTYÖ
+# OHJELMISTOTEKNIIKKA, HARJOITUSTYÖ
 Welcome to my **ohjelmistotekniikka** *harjoitustyö*.
 
 ## Tehtävät
