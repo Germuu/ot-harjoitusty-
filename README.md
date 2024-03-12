@@ -7,3 +7,4 @@ Welcome to my **ohjelmistotekniikka** *harjoitustyö*.
 
 [Komentorivi.txt](https://github.com/Germuu/ot-harjoitusty-/blob/master/laskarit/viikko1/komentorivi.txt)
 
+.
