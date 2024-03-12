@@ -1,5 +1,5 @@
 # HARJOITUSTYÖ
-Welcome to my **ohjelmistotekniikka** *harjoitustyö*
+Welcome to my **ohjelmistotekniikka** *harjoitustyö*.
 
 ## Tehtävät
 ### Viikko 1
