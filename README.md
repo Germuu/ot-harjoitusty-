@@ -8,6 +8,5 @@ Welcome to my **ohjelmistotekniikka** *harjoitustyö*.
 [Komentorivi.txt](https://github.com/Germuu/ot-harjoitusty-/blob/master/laskarit/viikko1/komentorivi.txt)
 
 ### Week 2 (Project)
-[Requirement specification]([file_path](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/requirement_specification.md)https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/requirement_specification.md)
-
+[Requirement specification]([file_path](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/requirement_specification.md)
 .
