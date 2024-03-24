@@ -23,9 +23,9 @@ class TestMaksukortti(unittest.TestCase):
         self.maksukortti.ota_rahaa(10000)
         self.assertEqual(self.maksukortti.saldo, 1000.0)
     
-    def palauttaa_oikean_boolean(self):
-        self.assertEqual(self.maksukortti.ota_rahaa(1200), False)
-        self.assertEqual(self.maksukortti.ota_rahaa(1000, False))
+    def test_palauttaa_oikean_boolean(self):
+        self.assertEqual(self.maksukortti.ota_rahaa(120), True)
+        self.assertEqual(self.maksukortti.ota_rahaa(10000), False)
 
 
     
