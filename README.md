@@ -1,10 +1,13 @@
 # OHJELMISTOTEKNIIKKA, HARJOITUSTYÖ
 Welcome to my **ohjelmistotekniikka** *harjoitustyö*.
 
-## Tehtävät
-### Viikko 1
+## Exercises
+### Week 1
 [Gitlog.txt](https://github.com/Germuu/ot-harjoitusty-/blob/master/laskarit/viikko1/gitlog.txt)
 
 [Komentorivi.txt](https://github.com/Germuu/ot-harjoitusty-/blob/master/laskarit/viikko1/komentorivi.txt)
+
+### Week 2 (Project)
+[Requirement specification]([file_path](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/requirement_specification.md)https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/requirement_specification.md)
 
 .
