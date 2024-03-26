@@ -5,7 +5,7 @@ This application supports multiple users, each of whom has their respective reci
 ## Users
 Only one user role. More will be added if needed.
 ## Sketch of user interface
-*insert picture here*
+![User interface sketch](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/Pictures/k%C3%A4ytt%C3%B6liittym%C3%A4%C3%B6.png)
 ## Functionalities of the basic version
 ### Before logging in
 - The user can register into the system
