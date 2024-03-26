@@ -9,4 +9,5 @@ Welcome to my **ohjelmistotekniikka** *harjoitustyö*.
 
 ### Week 2 (Project)
 [Requirement specification](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/requirement_specification.md)
+[Tuntikirjanpito](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/tuntikirjanpito.md)
 .
