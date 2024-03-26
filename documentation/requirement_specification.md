@@ -11,6 +11,6 @@ Only one user role. More will be added if needed.
 - The user can register into the system
   * Username must be unique and at least 4 characters
 - The user can log in to the system
-  * Login is successful if username and password in the database
+  * Login is successful if the username and password are in the database
   * If username or password not in the database: raise an error
 ### After logging in
