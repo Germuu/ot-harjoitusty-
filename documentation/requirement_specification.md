@@ -41,11 +41,12 @@ The application currently supports a single user role, with the flexibility to a
       - Clicking on a recipe displays its relevant data.
 
 ## Further Improvements
+- **Missing Ingredients**:
+  - Highlight missing ingredients when a recipe is clicked from the search ranking page.
 
 - **Shopping List**:
   - Implement a feature to generate a shopping list based on the ingredients needed for selected recipes.
   
-- **Missing Ingredients**:
-  - Highlight missing ingredients when a recipe is clicked from the search ranking page.
+
 
   
