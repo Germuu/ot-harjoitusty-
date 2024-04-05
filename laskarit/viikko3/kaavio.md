@@ -12,14 +12,17 @@ classDiagram
     Ruutu <|-- Aloitusruutu
     Ruutu <|-- Vankila
     Ruutu <|-- "many" Sattuma
-    Ruutu <|-- Yhteismaa
-    Ruutu <|-- Asema
-    Ruutu <|-- Laitos
-    Ruutu <|-- KadunRuutu
-    Yhteismaa 
-
+    Ruutu <|-- "many" Yhteismaa
+    Ruutu <|-- "many" Asema
+    Ruutu <|--  "many" Laitos
+    Ruutu <|-- "many" KadunRuutu
+    Yhteismaa -- "many" Kortti
+    Sattuma -- "many" Kortti
     class KadunRuutu{
         nimi
+        toiminto()
+    }
+    class Kortti{
         toiminto()
     }
 
