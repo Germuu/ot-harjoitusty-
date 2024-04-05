@@ -18,12 +18,13 @@ classDiagram
     Ruutu <|-- "many" KadunRuutu
     Yhteismaa -- "many" Kortti
     Sattuma -- "many" Kortti
+    
     class KadunRuutu{
         nimi
         toiminto()
     }
     class Kortti{
-        toiminto()
+        toiminto() "many"
     }
 
 ```
