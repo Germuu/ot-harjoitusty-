@@ -21,10 +21,10 @@ classDiagram
     
     class KadunRuutu{
         nimi
-        toiminto()
+        toiminto(katu)
     }
     class Kortti{
-        toiminto() "many"
+        toiminto(kortti) "many"
     }
 
 ```
