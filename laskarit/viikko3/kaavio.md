@@ -1,3 +1,4 @@
+```mermaid
 classDiagram
     Monopolipeli "1" -- "2" Noppa
     Monopolipeli "1" -- "1" Pelilauta
@@ -18,4 +19,4 @@ classDiagram
         Vankila -- "1" Ruutu : sijainti
         Aloitusruutu -- "1" Ruutu : sijainti
     }
-
+```
