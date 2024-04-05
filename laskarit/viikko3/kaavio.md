@@ -11,11 +11,12 @@ classDiagram
     Pelaaja "2..8" -- "1" Monopolipeli
     Ruutu <|-- Aloitusruutu
     Ruutu <|-- Vankila
-    Ruutu <|-- Sattuma
+    Ruutu <|-- "many" Sattuma
     Ruutu <|-- Yhteismaa
     Ruutu <|-- Asema
     Ruutu <|-- Laitos
     Ruutu <|-- KadunRuutu
+    Yhteismaa 
 
     class KadunRuutu{
         nimi
