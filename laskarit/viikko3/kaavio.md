@@ -1,7 +1,4 @@
-## Monopoli, alustava luokkakaavio
-
-```mermaid
- classDiagram
+classDiagram
     Monopolipeli "1" -- "2" Noppa
     Monopolipeli "1" -- "1" Pelilauta
     Pelilauta "1" -- "40" Ruutu
@@ -14,11 +11,10 @@
     Ruutu <|-- SattumaYhteismaa
     Ruutu <|-- AsemaLaitos
     Ruutu <|-- KadunRuutu
-    class KadunRuutu{
-          nimi
+    class KadunRuutu {
+        nimi
     }
-```
-    class Monopolipeli{
-         Vankila -- "1" Ruutu : sijainti
-         Aloitusruutu -- "1" Ruutu : sijainti
+    class Monopolipeli {
+        Vankila -- "1" Ruutu : sijainti
+        Aloitusruutu -- "1" Ruutu : sijainti
     }
