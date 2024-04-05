@@ -15,8 +15,5 @@ classDiagram
     class KadunRuutu{
         nimi
     }
-    class Monopolipeli {
-        Vankila -- "1" Ruutu : sijainti
-        Aloitusruutu -- "1" Ruutu : sijainti
-    }
+
 ```
