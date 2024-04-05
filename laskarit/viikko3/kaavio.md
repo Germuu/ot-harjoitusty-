@@ -14,4 +14,7 @@
     Ruutu <|-- SattumaYhteismaa
     Ruutu <|-- AsemaLaitos
     Ruutu <|-- KadunRuutu
+    class KadunRuutu{
+          nimi
+    }
 ```
