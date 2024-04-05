@@ -12,6 +12,8 @@ classDiagram
     Ruutu <|-- SattumaYhteismaa
     Ruutu <|-- AsemaLaitos
     Ruutu <|-- KadunRuutu
+    Monopolipeli "1" -- "1" Vankila
+    Monopolipeli "1" -- "1" Aloitusruutu
     class KadunRuutu{
         nimi
     }
