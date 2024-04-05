@@ -9,7 +9,8 @@ classDiagram
     Pelaaja "2..8" -- "1" Monopolipeli
     Ruutu <|-- Aloitusruutu
     Ruutu <|-- Vankila
-    Ruutu <|-- SattumaYhteismaa
+    Ruutu <|-- Sattuma
+    Ruutu <|-- Yhteismaa
     Ruutu <|-- AsemaLaitos
     Ruutu <|-- KadunRuutu
     Monopolipeli "1" -- "1" Vankila
