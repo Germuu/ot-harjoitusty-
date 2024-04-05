@@ -11,7 +11,8 @@ classDiagram
     Ruutu <|-- Vankila
     Ruutu <|-- Sattuma
     Ruutu <|-- Yhteismaa
-    Ruutu <|-- AsemaLaitos
+    Ruutu <|-- Asema
+    Ruutu <|-- Laitos
     Ruutu <|-- KadunRuutu
     Monopolipeli "1" -- "1" Vankila
     Monopolipeli "1" -- "1" Aloitusruutu
