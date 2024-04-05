@@ -16,6 +16,7 @@ classDiagram
     Monopolipeli "1" -- "1" Aloitusruutu
     class KadunRuutu{
         nimi
+        toiminto()
     }
 
 ```
