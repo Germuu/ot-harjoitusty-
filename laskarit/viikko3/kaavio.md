@@ -2,6 +2,8 @@
 classDiagram
     Monopolipeli "1" -- "2" Noppa
     Monopolipeli "1" -- "1" Pelilauta
+    Monopolipeli "1" -- "1" Vankila
+    Monopolipeli "1" -- "1" Aloitusruutu
     Pelilauta "1" -- "40" Ruutu
     Ruutu "1" -- "1" Ruutu : seuraava
     Ruutu "1" -- "0..8" Pelinappula
@@ -14,8 +16,7 @@ classDiagram
     Ruutu <|-- Asema
     Ruutu <|-- Laitos
     Ruutu <|-- KadunRuutu
-    Monopolipeli "1" -- "1" Vankila
-    Monopolipeli "1" -- "1" Aloitusruutu
+
     class KadunRuutu{
         nimi
         toiminto()
