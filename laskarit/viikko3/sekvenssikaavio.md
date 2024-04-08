@@ -5,6 +5,7 @@ sequenceDiagram
   participant rautatientori
   participant ratikka6
   participant bussi244
+  participant Matkakortti
   
   Main ->> rautatientori : Lataajalaite()
   Main ->> ratikka6: Lukijalaite()
@@ -16,6 +17,8 @@ sequenceDiagram
 
   Main ->> lippu_luukku : Kioski()
   Main ->> lippu_luukku : osta_matkakortti("Kalle")
+  lippu_luukku ->> Matkakortti : Matkakortti(Kalle)
+  
 
   
   
