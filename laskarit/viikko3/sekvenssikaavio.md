@@ -18,6 +18,7 @@ sequenceDiagram
   Main ->> lippu_luukku : Kioski()
   Main ->> lippu_luukku : osta_matkakortti("Kalle")
   lippu_luukku ->> Matkakortti : Matkakortti(Kalle)
+  Matkakortti -->> kallen_kortti : uusi_kortti
   
 
   
