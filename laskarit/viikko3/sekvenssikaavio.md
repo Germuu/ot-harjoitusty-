@@ -24,6 +24,9 @@ sequenceDiagram
   Main ->> rautatientori : lataa_arvoa(kallen_kortti, 3)
   rautatientori ->> kallen_kortti : kasvata_arvoa(3)
   rautatientori -->> Main : ""
+
+  Main ->> ratikka6 : osta_lippu(kallen_kortti, 0)
+  
   
   
 
