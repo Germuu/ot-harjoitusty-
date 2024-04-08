@@ -19,6 +19,7 @@ sequenceDiagram
   Main ->> lippu_luukku : osta_matkakortti("Kalle")
   lippu_luukku ->> Matkakortti : Matkakortti(Kalle)
   Matkakortti -->> kallen_kortti : uusi_kortti
+  lippu luukku -->> Main : ""
 
   Main ->> rautatientori : lataa_arvoa(kallen_kortti, 3)
   rautatientori ->> kallen_kortti : kasvata_arvoa(3)
