@@ -1,10 +1,11 @@
 ```mermaid
 sequenceDiagram
-  actor User
-  participant UI
-  participant TodoService
-  participant UserRepository
-  participant matti
+  actor Main
+  participant laitehallinto
+  participant lautatientori
+  participant latikka6
+  participant bussi244
+
   User->>UI: click "Create user" button
   UI->>TodoService: create_user("matti", "matti123")
   TodoService->>UserRepository: find_by_username("matti")
