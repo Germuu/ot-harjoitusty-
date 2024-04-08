@@ -34,7 +34,7 @@ sequenceDiagram
   Main ->> bussi244 : osta_lippu(kallen_kortti, 2)
   bussi244 ->> kallen_kortti : arvo()
   kallen_kortti -->> bussi244 : 1.5
-  ratikka6 -->> Main : False
+  bussi244 -->> Main : False
   
   
   
