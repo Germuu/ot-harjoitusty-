@@ -1,4 +1,4 @@
-# OHJELMISTOTEKNIIKKA, HARJOITUSTYÖ
+# RecipeGeneratorApp
 Welcome to my **ohjelmistotekniikka** *harjoitustyö*.
 
 ## Exercises
