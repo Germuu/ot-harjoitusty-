@@ -17,6 +17,8 @@ This application aims to simplify the often tedious task of deciding what to coo
    ```bash
    poetry install
 
+2. Start the login window
+   ```bash
    poetry run invoke start
 
 
