@@ -16,9 +16,9 @@ This application aims to simplify the often tedious task of deciding what to coo
 1. Install dependencies using the following command:
    ```bash
    poetry install
-   ```bash
+
    poetry run invoke start
-   ```bash
+
 
 
 
