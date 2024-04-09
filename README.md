@@ -1,5 +1,5 @@
 # RecipeGeneratorApp
-Welcome to my **ohjelmistotekniikka** *harjoitustyö*.
+This application aims to simplify the often tedious task of deciding what to cook. Users can create and manage their recipe collections, making meal planning more efficient and enjoyable.
 
 ## Exercises
 ### Week 1
