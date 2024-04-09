@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from services.recipe_app_service import RecipeAppService
 
+#Generated code begins
 class LoginPage:
     def __init__(self, root):
         self.root = root
@@ -24,6 +25,7 @@ class LoginPage:
 
         self.register_button = tk.Button(root, text="Register", command=self.open_registration)
         self.register_button.pack()
+#Generated code ends
 
     def login(self):
         username = self.username_entry.get()
