@@ -9,7 +9,7 @@ This application aims to simplify the often tedious task of deciding what to coo
 
 [Changelog](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/changelog.md)
 
-[Functionality blueprint](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures)
+[UI blueprint](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures)
 
 
 .
