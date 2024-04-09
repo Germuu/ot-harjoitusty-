@@ -5,7 +5,11 @@ def drop_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
-        drop table if exists users;
+        DROP TABLE IF EXISTS recipes;
+    ''')
+
+    cursor.execute('''
+        DROP TABLE IF EXISTS users;
     ''')
 
     connection.commit()
@@ -15,10 +19,22 @@ def create_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
-        create table users (
-            username text primary key,
-            password text
-        );
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL
+        )
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS recipes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            name TEXT NOT NULL,
+            cooking_time INTEGER NOT NULL,
+            ingredients TEXT NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users(id)
+        )
     ''')
 
     connection.commit()
