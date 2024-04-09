@@ -22,11 +22,16 @@ This application aims to simplify the often tedious task of deciding what to coo
    poetry run invoke start
 
 ## TESTING
-
    ```bash
    poetry run invoke test
+   ```
 
-## TESTING
+## coverage
+```bash
+   poetry run invoke coverage-report
+```
+
+
 
 
  
