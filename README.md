@@ -3,7 +3,7 @@ This application aims to simplify the often tedious task of deciding what to coo
 
 ## DOCUMENTATION
 
-[Requirement specification](https://github.com/Germuu/ot-harjoitustyo/blob/master/documentation/requirement_specification.md)
+[Requirement specification](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/requirement_specification.md)
 
 [Tuntikirjanpito](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/tuntikirjanpito.md)
 
