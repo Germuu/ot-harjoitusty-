@@ -52,3 +52,5 @@ class RecipeRepository:
         rows = cursor.fetchall()
 
         return [Recipe(row["name"], row["cooking_time"], row["ingredients"]) for row in rows]
+    
+recipe_repository = RecipeRepository(get_database_connection())

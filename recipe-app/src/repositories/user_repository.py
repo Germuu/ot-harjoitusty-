@@ -1,6 +1,7 @@
+import hashlib
 from entities.user import User
 from database_connection import get_database_connection
-import hashlib
+
 
 class UserRepository:
     def __init__(self, connection):
@@ -11,6 +12,7 @@ class UserRepository:
         query = "INSERT INTO users (username, password) VALUES (?, ?)"
         self._connection.execute(query, (user.username, hashed_password))
         self._connection.commit()
+        return user
 
     def retrieve_all(self):
         cursor = self._connection.cursor()
@@ -24,10 +26,13 @@ class UserRepository:
         row = cursor.fetchone()
         return User(row["username"], row["password"]) if row else None
 
-    def delete_all(self):
+    def clear(self):
         query = "DELETE FROM users"
         self._connection.execute(query)
         self._connection.commit()
 
 
 user_repository = UserRepository(get_database_connection())
+
+
+

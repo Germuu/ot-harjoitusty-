@@ -1,0 +1,22 @@
+from invoke import task
+
+
+@task
+def test(ctx):
+    ctx.run("pytest src", pty=True)
+
+@task
+def coverage(ctx):
+    ctx.run("coverage run --branch -m pytest", pty=True)
+
+@task(coverage)
+def coverage_report(ctx):
+    ctx.run("coverage html", pty=True)
+
+@task
+def database(ctx):
+    ctx.run("sqlite3 /home/yampi/ot-harjoitustyo/recipe-app/data/database.sqlite ", pty=True)
+
+@task
+def start(ctx):
+    ctx.run("python3 /home/yampi/ot-harjoitustyo/recipe-app/src/index.py", pty=True)
