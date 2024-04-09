@@ -15,8 +15,8 @@ def coverage_report(ctx):
 
 @task
 def database(ctx):
-    ctx.run("sqlite3 /home/yampi/ot-harjoitustyo/recipe-app/data/database.sqlite ", pty=True)
+    ctx.run("sqlite3 data/database.sqlite ", pty=True)
 
 @task
 def start(ctx):
-    ctx.run("python3 /home/yampi/ot-harjoitustyo/recipe-app/src/index.py", pty=True)
+    ctx.run("python3 src/index.py", pty=True)
