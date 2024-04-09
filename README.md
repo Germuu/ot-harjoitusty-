@@ -18,6 +18,7 @@ This application aims to simplify the often tedious task of deciding what to coo
    poetry install
    ```bash
    poetry run invoke start
+   ```bash
 
 
 
