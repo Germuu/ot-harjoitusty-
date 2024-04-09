@@ -5,7 +5,7 @@ This application aims to simplify the often tedious task of deciding what to coo
 
 [Requirement specification](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/requirement_specification.md)
 
-[Tuntikirjanpito](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/tuntikirjanpito.md)
+[Tuntikirjanpito](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/tuntikirjanpito.md)
 
 [Changelog](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/changelog.md)
 
