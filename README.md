@@ -11,4 +11,7 @@ Welcome to my **ohjelmistotekniikka** *harjoitustyö*.
 [Requirement specification](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/requirement_specification.md)
 
 [Tuntikirjanpito](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/tuntikirjanpito.md)
+
+### Week 3
+[Changelog](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/changelog.md)
 .
