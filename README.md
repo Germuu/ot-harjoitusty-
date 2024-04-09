@@ -11,11 +11,13 @@ This application aims to simplify the often tedious task of deciding what to coo
 
 [UI blueprint](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures)
 
-## Installation
+## USE
 
 1. Install dependencies using the following command:
    ```bash
    poetry install
+   poetry run invoke start
+
 
 
 
