@@ -3,8 +3,7 @@ from database_connection import get_database_connection
 
 class RecipeRepository:
     def __init__(self, connection):
-        self._connection = connection
-    
+        self._connection = connection    
     def create(self, recipe):
         query = "INSERT INTO recipes (name, cooking_time, ingredients) VALUES (?, ?, ?)"
         self._connection.execute(query, (recipe.name, recipe.cooking_time, recipe.ingredients))
@@ -52,5 +51,5 @@ class RecipeRepository:
         rows = cursor.fetchall()
 
         return [Recipe(row["name"], row["cooking_time"], row["ingredients"]) for row in rows]
-    
+
 recipe_repository = RecipeRepository(get_database_connection())

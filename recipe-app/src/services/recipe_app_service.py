@@ -10,6 +10,7 @@ from repositories.user_repository import (
     user_repository as default_user_repository
 )
 
+
 class RecipeAppService:
     def __init__(
         self,
@@ -21,19 +22,19 @@ class RecipeAppService:
         self._user_repository = user_repository
 
     def register_user(self, username, password):
-        
+
         existing_user = self._user_repository.find_by_username(username)
         if existing_user:
-            print (f"Username {username} already in use")
+            print(f"Username {username} already in use")
         else:
-            new_user=User(username, password)
+            new_user = User(username, password)
             self._user_repository.add_user(new_user)
-        
+
         return new_user
-    
+
     def login(self, username, password):
         user = self._user_repository.find_by_username(username)
-        if user:    
+        if user:
             if user.password == hashlib.sha256(password.encode()).hexdigest():
                 self._user = user
             else:
@@ -42,12 +43,11 @@ class RecipeAppService:
         else:
             print("User not found")
             return None
-        
+
         return user
 
     def logout(self):
         self._user = None
-
 
 
 recipe_service = RecipeAppService()

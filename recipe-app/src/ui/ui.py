@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from services.recipe_app_service import RecipeAppService
 
+
 class LoginPage:
     def __init__(self, root):
         self.root = root
@@ -34,6 +35,7 @@ class LoginPage:
             messagebox.showinfo("Login", "Login successful")
         else:
             messagebox.showerror("Login Error", "Invalid username or password")
+
 
 # Create main Tkinter window
 root = tk.Tk()

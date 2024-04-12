@@ -42,11 +42,11 @@ class LoginPage:
 
     def open_registration(self):
         # Create a new window for registration
-        self.registration_window = tk.Toplevel(self.root)
-        self.registration_window.title("Recipe App Registration")
+        registration_window = tk.Toplevel(self.root)
+        registration_window.title("Recipe App Registration")
 
         # Create registration page UI
-        self.registration_page = RegistrationPage(self.registration_window, self.recipe_service)
+        registration_page = RegistrationPage(registration_window, self.recipe_service)
 
 class RegistrationPage:
     def __init__(self, root, recipe_service):

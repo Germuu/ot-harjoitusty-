@@ -6,7 +6,7 @@ from database_connection import get_database_connection
 class UserRepository:
     def __init__(self, connection):
         self._connection = connection
-    
+
     def add_user(self, user):
         hashed_password = hashlib.sha256(user.password.encode()).hexdigest()
         query = "INSERT INTO users (username, password) VALUES (?, ?)"
@@ -33,6 +33,3 @@ class UserRepository:
 
 
 user_repository = UserRepository(get_database_connection())
-
-
-
