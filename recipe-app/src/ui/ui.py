@@ -1,45 +1,49 @@
 import tkinter as tk
-from tkinter import messagebox
-from services.recipe_app_service import RecipeAppService
+from ui.login_page import LoginPage
+from ui.register_page import RegistrationPage
 
 
-class LoginPage:
+class UI:
+
     def __init__(self, root):
-        self.root = root
-        self.root.title("Recipe App Login")
+        self._root = root
+        self._current_view = None
 
-        self.recipe_service = RecipeAppService()
+    def start(self):
+        self._show_login_view()
 
-        self.username_label = tk.Label(root, text="Username:")
-        self.username_label.pack()
-        self.username_entry = tk.Entry(root)
-        self.username_entry.pack()
+    def _hide_current_view(self):
+        if self._current_view:
+            self._current_view.destroy()
 
-        self.password_label = tk.Label(root, text="Password:")
-        self.password_label.pack()
-        self.password_entry = tk.Entry(root, show="*")
-        self.password_entry.pack()
+    def _show_login_view(self):
+        self._hide_current_view()
 
-        self.login_button = tk.Button(root, text="Login", command=self.login)
-        self.login_button.pack()
+        self._current_view = LoginPage(
+            self._root,
+            self._show_login_view,
+            self._show_create_user_view
+        )
 
-    def login(self):
-        username = self.username_entry.get()
-        password = self.password_entry.get()
+        self._current_view.pack()
 
-        # Call the login method from RecipeAppService
-        user = self.recipe_service.login(username, password)
+    def _show_create_user_view(self):
+        self._hide_current_view()
 
-        # Check if the login was successful
-        if user:
-            messagebox.showinfo("Login", "Login successful")
-        else:
-            messagebox.showerror("Login Error", "Invalid username or password")
+        self._current_view = RegistrationPage(
+            self._root,
+            self._redirect_to_login,  # Pass the registration handler here
+            self._show_login_view
+        )
+
+        self._current_view.pack()
+
+    def _redirect_to_login(self):
+        self._show_login_view()  # Show login page after successful registration
 
 
-# Create main Tkinter window
-root = tk.Tk()
-app = LoginPage(root)
-
-# Run the Tkinter event loop
-root.mainloop()
+if __name__ == "__main__":
+    root = tk.Tk()
+    ui = UI(root)
+    ui.start()
+    root.mainloop()

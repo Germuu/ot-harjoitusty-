@@ -1,12 +1,15 @@
 from entities.recipe import Recipe
 from database_connection import get_database_connection
 
+
 class RecipeRepository:
     def __init__(self, connection):
-        self._connection = connection    
+        self._connection = connection
+
     def create(self, recipe):
         query = "INSERT INTO recipes (name, cooking_time, ingredients) VALUES (?, ?, ?)"
-        self._connection.execute(query, (recipe.name, recipe.cooking_time, recipe.ingredients))
+        self._connection.execute(
+            query, (recipe.name, recipe.cooking_time, recipe.ingredients))
         self._connection.commit()
 
     def retrieve_all(self):
@@ -28,7 +31,8 @@ class RecipeRepository:
 
     def find_by_cooking_time(self, max_cooking_time):
         cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM recipes WHERE cooking_time <= ?", (max_cooking_time,))
+        cursor.execute(
+            "SELECT * FROM recipes WHERE cooking_time <= ?", (max_cooking_time,))
         rows = cursor.fetchall()
         return [Recipe(row["name"], row["cooking_time"], row["ingredients"]) for row in rows]
 
@@ -36,7 +40,8 @@ class RecipeRepository:
         cursor = self._connection.cursor()
         query = "SELECT * FROM recipes WHERE "
         query += " AND ".join(["ingredients LIKE ?" for _ in ingredients])
-        cursor.execute(query, tuple("%{}%".format(ingredient) for ingredient in ingredients))
+        cursor.execute(query, tuple("%{}%".format(ingredient)
+                       for ingredient in ingredients))
         rows = cursor.fetchall()
         return [Recipe(row["name"], row["cooking_time"], row["ingredients"]) for row in rows]
 
@@ -51,5 +56,6 @@ class RecipeRepository:
         rows = cursor.fetchall()
 
         return [Recipe(row["name"], row["cooking_time"], row["ingredients"]) for row in rows]
+
 
 recipe_repository = RecipeRepository(get_database_connection())

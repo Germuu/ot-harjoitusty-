@@ -1,6 +1,7 @@
+import hashlib
 from entities.recipe import Recipe
 from entities.user import User
-import hashlib
+
 
 from repositories.recipe_repository import (
     recipe_repository as default_recipe_repository
@@ -50,4 +51,4 @@ class RecipeAppService:
         self._user = None
 
 
-recipe_service = RecipeAppService()
+recipe_app_service = RecipeAppService()
