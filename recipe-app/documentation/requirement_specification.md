@@ -6,11 +6,11 @@ This application aims to simplify the often tedious task of deciding what to coo
 
 ## Users
 
-The application currently supports a single user role, with the flexibility to add more roles as necessary in the future.
+The application currently supports a single-user role, with the flexibility to add more roles as necessary in the future.
 
 ## Sketch of User Interface
 
-![User Interface Sketch](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/Pictures/k%C3%A4ytt%C3%B6liittym%C3%A4%C3%B6.png)
+![User Interface Sketch](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/k%C3%A4ytt%C3%B6liittym%C3%A4%C3%B6.png)
 
 ## Functionalities of the Basic Version
 

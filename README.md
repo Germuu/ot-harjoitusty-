@@ -3,13 +3,13 @@ This application aims to simplify the often tedious task of deciding what to coo
 
 ## DOCUMENTATION
 
-[Requirement specification](https://github.com/Germuu/ot-harjoitusty-/blob/master/documentation/requirement_specification.md)
+[Requirement specification](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/requirement_specification.md)
 
 [Tuntikirjanpito](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/tuntikirjanpito.md)
 
 [Changelog](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/changelog.md)
 
-[UI blueprint](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures)
+[UI blueprint](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/k%C3%A4ytt%C3%B6liittym%C3%A4%C3%B6.png)
 
 ## USE
 
