@@ -32,8 +32,8 @@ def create_tables(connection):
             name TEXT NOT NULL,
             cooking_time INTEGER NOT NULL,
             ingredients TEXT NOT NULL,
-            user_id INTEGER,
-            FOREIGN KEY (user_id) REFERENCES users(id)
+            username TEXT,  -- Define the username column in the recipes table
+            FOREIGN KEY (username) REFERENCES users(username)
         )
     ''')
 

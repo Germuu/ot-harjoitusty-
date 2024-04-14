@@ -32,8 +32,8 @@ class MyRecipesPage:
         scrollable_frame = tk.Frame(self._frame)
         scrollable_frame.pack(fill=tk.BOTH, expand=True)
 
-    # Fetch recipes for the current user
-        recipes = recipe_app_service.fetch_recipes_by_user(self._current_user.id)
+        # Fetch recipes for the current user
+        recipes = recipe_app_service.fetch_recipes_by_user(self._current_user.username)
 
         for recipe in recipes:
             recipe_frame = tk.Frame(scrollable_frame)
@@ -47,21 +47,10 @@ class MyRecipesPage:
             delete_button = tk.Button(recipe_frame, text="X", command=lambda name=recipe.name: self.delete_recipe(name))
             delete_button.pack(side=tk.RIGHT, padx=10, pady=5)
 
-        for idx, recipe_name in enumerate(recipes, start=1):
-            recipe_frame = tk.Frame(scrollable_frame)
-            recipe_frame.pack(fill=tk.X)
-
-            # Display the recipe name
-            recipe_label = tk.Label(recipe_frame, text=recipe_name)
-            recipe_label.pack(side=tk.LEFT, padx=10, pady=5)
-
-            # Create a delete button for each recipe
-            delete_button = tk.Button(recipe_frame, text="X", command=lambda name=recipe_name: self.delete_recipe(name))
-            delete_button.pack(side=tk.RIGHT, padx=10, pady=5)
-
         # Back button
         back_button = tk.Button(self._frame, text="Back", command=self._handle_home_page)
         back_button.pack(side=tk.BOTTOM)
+
 
     def delete_recipe(self, recipe_name):
         # Call the recipe service to delete the recipe by name

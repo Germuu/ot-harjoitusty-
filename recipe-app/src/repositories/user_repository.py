@@ -34,3 +34,4 @@ class UserRepository:
 
 
 user_repository = UserRepository(get_database_connection())
+
