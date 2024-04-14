@@ -4,9 +4,8 @@ from services.recipe_app_service import recipe_app_service
 
 
 class RegistrationPage:
-    def __init__(self, root, handle_registration, handle_login_page):
+    def __init__(self, root,  handle_login_page):
         self._root = root
-        self._handle_registration = handle_registration
         self._handle_login_page = handle_login_page
         self._frame = None
         self._username_entry = None

@@ -29,6 +29,8 @@ class LoginPage:
 
         # Check if the login was successful
         if user:
+            self._handle_login()
+
             messagebox.showinfo("Login", "Login successful")
         else:
             messagebox.showerror("Login Error", "Invalid username or password")
