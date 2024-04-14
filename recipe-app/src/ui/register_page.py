@@ -4,9 +4,9 @@ from services.recipe_app_service import recipe_app_service
 
 
 class RegistrationPage:
-    def __init__(self, root,  handle_login_page):
+    def __init__(self, root,  handle_register):
         self._root = root
-        self._handle_login_page = handle_login_page
+        self._handle_register = handle_register
         self._frame = None
         self._username_entry = None
         self._password_entry = None
@@ -23,11 +23,13 @@ class RegistrationPage:
         username = self.username_entry.get()
         password = self.password_entry.get()
 
+
         try:
             recipe_app_service.register_user(username, password)
             messagebox.showinfo("Registration", "Registration successful")
-            self._handle_login_page()
+            self._handle_register()
         except:
+            print(recipe_app_service.register_user(username, password))
             messagebox.showerror("Registration Error", "Username taken")
 
     def initialize(self):

@@ -29,13 +29,14 @@ def create_tables(connection):
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS recipes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER NOT NULL,
             name TEXT NOT NULL,
             cooking_time INTEGER NOT NULL,
             ingredients TEXT NOT NULL,
+            user_id INTEGER,
             FOREIGN KEY (user_id) REFERENCES users(id)
         )
     ''')
+
 
     connection.commit()
 

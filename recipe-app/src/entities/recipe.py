@@ -1,5 +1,5 @@
 class Recipe:
-    def __init__(self, name, time, ingredients):
+    def __init__(self, name, cooking_time, ingredients):
         self.name = name
-        self.time = time
+        self.cooking_time = cooking_time
         self.ingredients = ingredients

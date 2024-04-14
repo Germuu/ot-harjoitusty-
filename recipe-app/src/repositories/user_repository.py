@@ -30,6 +30,7 @@ class UserRepository:
         query = "DELETE FROM users"
         self._connection.execute(query)
         self._connection.commit()
+       
 
 
 user_repository = UserRepository(get_database_connection())
