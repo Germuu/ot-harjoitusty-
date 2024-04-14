@@ -56,8 +56,7 @@ class RecipeRepository:
         rows = cursor.fetchall()
 
         return [Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"]) for row in rows]
-    
-    
+
     def delete_by_name(self, name):
         query = "DELETE FROM recipes WHERE name = ?"
         self._connection.execute(query, (name,))

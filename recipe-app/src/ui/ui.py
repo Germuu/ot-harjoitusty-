@@ -27,7 +27,7 @@ class UI:
             self._root,
             self._show_home_view,
             self._show_create_user_view,
-            
+
         )
 
         self._current_view.pack()
@@ -37,10 +37,9 @@ class UI:
 
         self._current_view = RegistrationPage(
             self._root,
-            self._show_login_view  # Pass the registration handler here   
+            self._show_login_view  # Pass the registration handler here
         )
         self._current_view.pack()
-
 
     def _show_home_view(self):
         self._hide_current_view()
@@ -55,7 +54,7 @@ class UI:
 
     def _show_my_recipes_view(self):
         self._hide_current_view()
-        
+
         self._current_view = MyRecipesPage(
             self._root,
             self._show_add_recipe_view,
@@ -64,19 +63,19 @@ class UI:
             self._show_my_recipes_view
         )
         self._current_view.pack()
-    
+
     def _show_add_recipe_view(self):
         self._hide_current_view()
-        
+
         self._current_view = AddRecipePage(
             self._root,
             self._show_my_recipes_view
         )
         self._current_view.pack()
-    
+
     def _show_find_recipes_view(self):
         pass
-    
+
     def _show_edit_recipe_view(self):
         pass
         self._hide_current_view()
@@ -87,11 +86,6 @@ class UI:
         )
 
         self._current_view.pack()
-
-
-
-        
-
 
 
 if __name__ == "__main__":

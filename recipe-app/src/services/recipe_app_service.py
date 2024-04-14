@@ -44,16 +44,14 @@ class RecipeAppService:
         else:
             print("User not found")
             return None
-        
+
         return user
-    
+
     def get_current_user(self):
-        return self._user 
+        return self._user
 
     def logout(self):
         self._user = None
-    
-
 
     def create_recipe(self, name, ingredients, time, username):
         # Check if a recipe with the same name already exists
@@ -81,10 +79,9 @@ class RecipeAppService:
 
     def fetch_recipes_by_user(self, username):
         return self._recipe_repository.fetch_recipes_by_user(username)
-    
+
     def delete_recipe(self, recipe_name):
         return self._recipe_repository.delete_by_name(recipe_name)
-   
 
 
 recipe_app_service = RecipeAppService()

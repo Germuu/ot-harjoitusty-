@@ -37,7 +37,6 @@ def create_tables(connection):
         )
     ''')
 
-
     connection.commit()
 
 

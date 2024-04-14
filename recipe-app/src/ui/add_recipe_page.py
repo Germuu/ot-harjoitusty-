@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, constants
 from services.recipe_app_service import recipe_app_service
 
+
 class AddRecipePage:
     def __init__(self, root, handle_save):
         self._root = root
@@ -11,15 +12,15 @@ class AddRecipePage:
         self._ingredients_entry = None
         self._time_entry = None
         self._current_user = recipe_app_service.get_current_user()
-        
+
         self.initialize()
-    
+
     def pack(self):
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
         self._frame.destroy()
-    
+
     def add(self):
         # Get the input values from the entry fields
         name = self._name_entry.get()
@@ -39,9 +40,11 @@ class AddRecipePage:
             return
 
         # Call the service method to add the recipe
-        new_recipe = recipe_app_service.create_recipe(name, time, ingredients, self._current_user.username)
+        new_recipe = recipe_app_service.create_recipe(
+            name, time, ingredients, self._current_user.username)
         if new_recipe:
-            messagebox.showinfo("Success", f"Recipe '{name}' added successfully")
+            messagebox.showinfo(
+                "Success", f"Recipe '{name}' added successfully")
             self._handle_save()  # Handle the successful addition
         else:
             messagebox.showerror("Error", f"Recipe '{name}' already exists")
@@ -59,10 +62,11 @@ class AddRecipePage:
         self._ingredients_entry = tk.Entry(self._frame)
         self._ingredients_entry.pack()
 
-        time_label = tk.Label(self._frame, text="Cooking Time:")
+        time_label = tk.Label(self._frame, text="Cooking time in minutes:")
         time_label.pack()
         self._time_entry = tk.Entry(self._frame)
         self._time_entry.pack()
 
-        add_button = tk.Button(self._frame, text="Add Recipe", command=self.add)
+        add_button = tk.Button(
+            self._frame, text="Add Recipe", command=self.add)
         add_button.pack()

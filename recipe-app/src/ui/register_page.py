@@ -23,7 +23,6 @@ class RegistrationPage:
         username = self.username_entry.get()
         password = self.password_entry.get()
 
-
         try:
             recipe_app_service.register_user(username, password)
             messagebox.showinfo("Registration", "Registration successful")
