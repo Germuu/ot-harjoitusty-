@@ -4,6 +4,7 @@ from ui.register_page import RegistrationPage
 from ui.home_page import HomePage
 from ui.my_recipes_page import MyRecipesPage
 from ui.add_recipe_page import AddRecipePage
+from ui.edit_recipe_page import EditRecipe
 
 
 class UI:
@@ -59,7 +60,8 @@ class UI:
             self._root,
             self._show_add_recipe_view,
             self._show_edit_recipe_view,
-            self._show_home_view
+            self._show_home_view,
+            self._show_my_recipes_view
         )
         self._current_view.pack()
     

@@ -3,11 +3,12 @@ from tkinter import messagebox, constants
 from services.recipe_app_service import recipe_app_service
 
 class MyRecipesPage:
-    def __init__(self, root, handle_add, edit_recipe, handle_home_page):
+    def __init__(self, root, handle_add, edit_recipe, handle_home_page, handle_refresh):
         self.root = root
         self._handle_add = handle_add
         self._handle_home_page = handle_home_page
         self._edit_recipe = edit_recipe
+        self._handle_refresh = handle_refresh
         self._current_user = recipe_app_service.get_current_user()
         self._frame = None
         
@@ -53,8 +54,6 @@ class MyRecipesPage:
 
 
     def delete_recipe(self, recipe_name):
-        # Call the recipe service to delete the recipe by name
-        # You can implement this based on the service method you've created
         recipe_app_service.delete_recipe(recipe_name)
-        # Refresh the page after deletion (optional)
-        self.initialize()
+        self._handle_refresh()
+
