@@ -1,7 +1,7 @@
 
 # Changelog
 
-## [Unreleased]
+## [Week 3]
 
 ### Added
 - Implemented user registration functionality.
@@ -19,3 +19,23 @@
 
 ### Fixed
 - Resolved issue with incorrect password validation during login.
+
+## [Week 4]
+
+### Added
+- Implemented functionality to add recipes.
+- Integrated recipe management features with the UI.
+- Implemented service layer for recipe management.
+- Implemented functionality to display user's recipes on the UI.
+- Added delete functionality for recipes.
+- Added refresh functionality to update the UI after recipe deletion.
+
+### Changed
+- Updated UI to support recipe addition and display.
+- Refactored repository classes to handle recipe-related operations.
+- Modified database schema to include recipe table.
+
+### Fixed
+- Separated contents of index.py into ui files
+
+
