@@ -26,8 +26,8 @@ classDiagram
         +save(todo: Todo): void
         +delete(todo: Todo): void
     }
-    User "1" --> "*" Todo :
-    UserRepository --|> User : 
-    TodoRepository --|> Todo : 
+    User "1" --> "*" Todo 
+    UserRepository --|> User 
+    TodoRepository --|> Todo  
 
 ```
