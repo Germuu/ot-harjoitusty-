@@ -1,6 +1,10 @@
 ```mermaid
 classDiagram
-    class User
-    class Recipe
+    RecipeAppService -- User
+    RecipeAppService -- Recipe
+    User "1" -- "*" Recipe
+  
+
+
 
 ```
