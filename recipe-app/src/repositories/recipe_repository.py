@@ -45,7 +45,7 @@ class RecipeRepository:
                        row["cooking_time"],
                        row["ingredients"],
                        row["username"]) for row in rows]
-
+    #Generated starts
     def find_by_ingredients(self, ingredients):
         cursor = self._connection.cursor()
         query = "SELECT * FROM recipes WHERE "
@@ -57,6 +57,7 @@ class RecipeRepository:
                        row["cooking_time"],
                        row["ingredients"],
                        row["username"]) for row in rows]
+    #Generated ends
 
     def fetch_recipes_by_user(self, username):
         cursor = self._connection.cursor()
