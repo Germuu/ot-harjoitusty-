@@ -1,8 +1,6 @@
 ```mermaid
 classDiagram
-     package "Entities" {
-        class User
-        class Recipe
-    }
+    class User
+    class Recipe
 
 ```
