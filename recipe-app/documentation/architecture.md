@@ -1,3 +1,4 @@
+```mermaid
 classDiagram
     class User {
         <<Entity>>
@@ -29,3 +30,4 @@ classDiagram
     UserRepository --|> User : contains
     TodoRepository --|> Todo : contains
 
+```
