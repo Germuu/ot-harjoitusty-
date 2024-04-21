@@ -34,6 +34,11 @@ This application aims to simplify the often tedious task of deciding what to coo
   ```bash
    poetry run invoke coverage-report
   ```
+## PYLINT
+  ```bash
+   poetry run invoke lint
+  ```
+
 
 
 
