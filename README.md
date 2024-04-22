@@ -12,6 +12,7 @@ This application aims to simplify the often tedious task of deciding what to coo
 [UI blueprint](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/k%C3%A4ytt%C3%B6liittym%C3%A4%C3%B6.png)
 
 [Architecture](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/architecture.md)
+[Release 1.0.0](https://github.com/Germuu/ot-harjoitustyo/releases/tag/viikko5)
 
 ## USE
 
