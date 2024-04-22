@@ -82,6 +82,18 @@ class RecipeAppService:
 
     def delete_recipe(self, recipe_name):
         return self._recipe_repository.delete_by_name(recipe_name)
+    
+
+    def update_recipe(self, old_name, new_name, new_cooking_time, new_ingredients):
+        # Check if the recipe exists
+        existing_recipe = self._recipe_repository.find_by_name(old_name)
+        if not existing_recipe:
+            print(f"Recipe with name {old_name} not found.")
+            return None
+
+        # Update the recipe
+        self._recipe_repository.update_recipe(
+            old_name, new_name, new_cooking_time, new_ingredients)
 
 
 recipe_app_service = RecipeAppService()

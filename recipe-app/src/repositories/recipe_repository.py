@@ -80,4 +80,11 @@ class RecipeRepository:
         self._connection.commit()
 
 
+
+    def update_recipe(self, recipe_id, new_name, new_cooking_time, new_ingredients):
+        query = "UPDATE recipes SET name=?, cooking_time=?, ingredients=? WHERE id=?"
+        self._connection.execute(
+            query, (new_name, new_cooking_time, new_ingredients, recipe_id))
+        self._connection.commit()
+
 recipe_repository = RecipeRepository(get_database_connection())

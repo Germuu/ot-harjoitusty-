@@ -5,7 +5,7 @@ from services.recipe_app_service import recipe_app_service
 
 class MyRecipesPage:
     def __init__(self, root, handle_add, edit_recipe, handle_home_page, handle_refresh):
-        self.root = root
+        self._root = root
         self._handle_add = handle_add
         self._handle_home_page = handle_home_page
         self._edit_recipe = edit_recipe
@@ -22,7 +22,7 @@ class MyRecipesPage:
         self._frame.destroy()
 
     def initialize(self):
-        self._frame = tk.Frame(master=self.root)
+        self._frame = tk.Frame(master=self._root)
 
         label = tk.Label(self._frame, text="My Recipes")
         label.pack()
@@ -44,7 +44,7 @@ class MyRecipesPage:
             recipe_frame.pack(fill=tk.X)
 
             # Display the recipe name
-            recipe_label = tk.Label(recipe_frame, text=recipe.name)
+            recipe_label = tk.Button(recipe_frame, text=recipe.name, command=lambda name=recipe.name: self._edit_recipe(recipe))
             recipe_label.pack(side=tk.LEFT, padx=10, pady=5)
 
             # Create a delete button for each recipe
