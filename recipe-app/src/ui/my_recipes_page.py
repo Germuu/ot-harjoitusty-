@@ -44,7 +44,8 @@ class MyRecipesPage:
             recipe_frame.pack(fill=tk.X)
 
             # Display the recipe name
-            recipe_label = tk.Button(recipe_frame, text=recipe.name, command=lambda name=recipe.name: self._edit_recipe(recipe))
+            recipe_label = tk.Button(recipe_frame, text=recipe.name,
+                                     command=lambda name=recipe.name: self._edit_recipe(recipe))
             recipe_label.pack(side=tk.LEFT, padx=10, pady=5)
 
             # Create a delete button for each recipe

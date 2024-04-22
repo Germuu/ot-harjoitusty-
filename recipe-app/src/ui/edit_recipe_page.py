@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, constants
 from services.recipe_app_service import recipe_app_service
 
+
 class EditRecipe:
     def __init__(self, root, handle_save, recipe_to_edit):
         self._root = root
@@ -44,7 +45,7 @@ class EditRecipe:
         # Save Button
         save_button = tk.Button(self._frame, text="Save", command=self.edit)
         save_button.grid(row=3, columnspan=2, padx=5, pady=5)
-    
+
     def edit(self):
         # Get the new values from the entry fields
         new_name = self._name_entry.get()
@@ -52,12 +53,11 @@ class EditRecipe:
         new_max_time = int(self._max_time_entry.get())  # Convert to int
 
         # Call the service method to update the recipe
-        recipe_app_service.update_recipe(self._recipe_to_edit.name, new_name, new_max_time, new_ingredients)
+        recipe_app_service.update_recipe(
+            self._recipe_to_edit, new_name, new_max_time, new_ingredients)
 
         # Show a success message
         messagebox.showinfo("Success", "Recipe updated successfully")
 
         # Call the handle_save method to refresh the view or navigate back
         self._handle_save()
-
-

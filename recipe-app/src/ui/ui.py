@@ -76,8 +76,8 @@ class UI:
     def _show_find_recipes_view(self):
         pass
 
-    def _show_edit_recipe_view(self,recipe):
-        
+    def _show_edit_recipe_view(self, recipe):
+
         self._hide_current_view()
 
         self._current_view = EditRecipe(

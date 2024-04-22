@@ -45,7 +45,8 @@ class RecipeRepository:
                        row["cooking_time"],
                        row["ingredients"],
                        row["username"]) for row in rows]
-    #Generated starts
+    # Generated starts
+
     def find_by_ingredients(self, ingredients):
         cursor = self._connection.cursor()
         query = "SELECT * FROM recipes WHERE "
@@ -57,7 +58,7 @@ class RecipeRepository:
                        row["cooking_time"],
                        row["ingredients"],
                        row["username"]) for row in rows]
-    #Generated ends
+    # Generated ends
 
     def fetch_recipes_by_user(self, username):
         cursor = self._connection.cursor()
@@ -79,12 +80,11 @@ class RecipeRepository:
         self._connection.execute(query, (name,))
         self._connection.commit()
 
-
-
-    def update_recipe(self, recipe_id, new_name, new_cooking_time, new_ingredients):
-        query = "UPDATE recipes SET name=?, cooking_time=?, ingredients=? WHERE id=?"
+    def update_recipe(self, recipe, new_name, new_cooking_time, new_ingredients):
+        query = "UPDATE recipes SET name=?, cooking_time=?, ingredients=? WHERE name=?"
         self._connection.execute(
-            query, (new_name, new_cooking_time, new_ingredients, recipe_id))
+            query, (new_name, new_cooking_time, new_ingredients, recipe.name))
         self._connection.commit()
+
 
 recipe_repository = RecipeRepository(get_database_connection())
