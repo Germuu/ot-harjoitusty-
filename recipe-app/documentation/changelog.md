@@ -11,7 +11,7 @@
 - Implemented service layer for user management.
 - Added UserRepository class to manage user information.
 - Added RecipeRepository class to manage recipe data.
-- Created a test to ensure correct functionality of adding users.
+- Created a test to ensure the correct functionality of adding users.
 
 ### Changed
 - Refactored repository classes to handle user-related operations.
@@ -37,5 +37,19 @@
 
 ### Fixed
 - Separated contents of index.py into ui files
+
+## [Week 5]
+
+### Added
+- Implemented functionality to edit recipes.
+- Integrated recipe management features with the UI, including recipe search and display.
+- Implemented a service layer for recipe management.
+- Added recipe search functionality based on name, ingredients, and maximum cooking time.
+- Implemented functionality to display user's recipes on the UI.
+- Added refresh functionality to update the UI after recipe deletion.
+- Added UI for inspecting recipe details.
+- started building prioritization for displayed recipes
+
+
 
 
