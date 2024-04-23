@@ -17,7 +17,7 @@ The application currently supports a single-user role, with the flexibility to a
 ### Before Logging In
 
 - **User Registration**:
-  - Users can register with the system. &#10004
+  - Users can register with the system. &#10004;
   - Usernames must be unique and at least 4 characters long.
   
 - **User Login**:
