@@ -11,6 +11,11 @@ sequenceDiagram
   participant RecipeAppService
   participant UserRepository
   User ->> UI : Login button pressed
+  UI ->> RecipeAppService : login("admin", "1234")
+  RecipeAppService ->> UserRepository : find_by_username("admin")
+  UserRepository ->> RecipeAppService : User
+  RecipeAppService ->> UI : User
+  UI ->> UI : _show_home_view()
 
 
 
