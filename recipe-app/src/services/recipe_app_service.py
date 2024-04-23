@@ -88,11 +88,50 @@ class RecipeAppService:
         existing_recipe = recipe
         if not existing_recipe:
             print(f"Recipe with name {recipe.name} not found.")
-            return None
 
         # Update the recipe
         self._recipe_repository.update_recipe(
             recipe, new_name, new_cooking_time, new_ingredients)
+
+
+# Under construction
+
+    def search_recipes_algorithm(self, ingredients, max_time):
+        user = self.get_current_user()
+        user_recipes = self.fetch_recipes_by_user(user.username)
+
+        time_weight = 0.6
+        ingredient_weight = 0.4
+
+        recipe_scores = {}
+
+        for recipe in user_recipes:
+            score = 0
+
+            if recipe.cooking_time <= max_time:
+                score += (max_time - recipe.cooking_time) / \
+                    max_time * time_weight
+
+            recipe_ingredients = recipe.ingredients.split(',')
+            user_ingredients = ingredients.split(',')
+            common_ingredients = set(
+                recipe_ingredients) & set(user_ingredients)
+            score += len(common_ingredients) / \
+                len(user_ingredients) * ingredient_weight
+
+            recipe_scores[recipe] = score
+
+        sorted_recipes = sorted(recipe_scores.keys(),
+                                key=lambda r: recipe_scores[r], reverse=True)
+
+        return sorted_recipes
+
+    def get_random_recipe(self):
+        current_user = self.get_current_user().username
+        random_recipe = self._recipe_repository.get_random_recipe_for_user(
+            current_user)
+
+        return random_recipe
 
 
 recipe_app_service = RecipeAppService()

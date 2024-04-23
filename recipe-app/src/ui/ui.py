@@ -5,6 +5,8 @@ from ui.home_page import HomePage
 from ui.my_recipes_page import MyRecipesPage
 from ui.add_recipe_page import AddRecipePage
 from ui.edit_recipe_page import EditRecipe
+from ui.find_recipes_page import FindRecipesPage
+from ui.search_results_page import SearchResultsPage
 
 
 class UI:
@@ -74,10 +76,27 @@ class UI:
         self._current_view.pack()
 
     def _show_find_recipes_view(self):
-        pass
+        self._hide_current_view()
+
+        self._current_view = FindRecipesPage(
+            self._root,
+            self._show_results_view,
+            self._show_home_view
+        )
+        self._current_view.pack()
+
+    def _show_results_view(self, results):
+        self._hide_current_view()
+
+        self._current_view = SearchResultsPage(
+            self._root,
+            results,
+            self._show_recipe_details_view
+        )
+
+        self._current_view.pack()
 
     def _show_edit_recipe_view(self, recipe):
-
         self._hide_current_view()
 
         self._current_view = EditRecipe(

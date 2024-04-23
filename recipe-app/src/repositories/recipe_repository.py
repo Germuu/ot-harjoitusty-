@@ -45,20 +45,6 @@ class RecipeRepository:
                        row["cooking_time"],
                        row["ingredients"],
                        row["username"]) for row in rows]
-    # Generated starts
-
-    def find_by_ingredients(self, ingredients):
-        cursor = self._connection.cursor()
-        query = "SELECT * FROM recipes WHERE "
-        query += " AND ".join([f"ingredients LIKE ?" for _ in ingredients])
-        cursor.execute(query, tuple(
-            f"%{ingredient}%" for ingredient in ingredients))
-        rows = cursor.fetchall()
-        return [Recipe(row["name"],
-                       row["cooking_time"],
-                       row["ingredients"],
-                       row["username"]) for row in rows]
-    # Generated ends
 
     def fetch_recipes_by_user(self, username):
         cursor = self._connection.cursor()
@@ -85,6 +71,17 @@ class RecipeRepository:
         self._connection.execute(
             query, (new_name, new_cooking_time, new_ingredients, recipe.name))
         self._connection.commit()
+
+    def get_random_recipe_for_user(self, user):
+        query = "SELECT * FROM recipes WHERE username = ? ORDER BY RANDOM() LIMIT 1"
+        cursor = self._connection.cursor()
+        cursor.execute(query, (user,))
+        row = cursor.fetchone()
+
+        if row:
+            return Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"])
+
+        return None
 
 
 recipe_repository = RecipeRepository(get_database_connection())

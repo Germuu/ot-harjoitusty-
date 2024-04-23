@@ -5,10 +5,10 @@ from services.recipe_app_service import recipe_app_service
 
 class HomePage:
     def __init__(self, root, handle_my_recipes, handle_find_recipes, handle_logout):
-        self.root = root
+        self._root = root
         self._current_view = None
         self._handle_my_recipes = handle_my_recipes
-        self._handle_find_recipes = None
+        self._handle_find_recipes = handle_find_recipes
         self._handle_logout = handle_logout
         self._current_user = recipe_app_service.get_current_user()
         self._frame = None
@@ -22,7 +22,7 @@ class HomePage:
         self._frame.destroy()
 
     def initialize(self):
-        self._frame = tk.Frame(master=self.root)
+        self._frame = tk.Frame(master=self._root)
 
         label = tk.Label(self._frame, text=(
             f"Welcome! {self._current_user.username}"))
