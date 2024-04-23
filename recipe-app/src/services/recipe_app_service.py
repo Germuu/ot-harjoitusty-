@@ -93,38 +93,12 @@ class RecipeAppService:
         self._recipe_repository.update_recipe(
             recipe, new_name, new_cooking_time, new_ingredients)
 
+    # Under construction
 
-# Under construction
-
-    def search_recipes_algorithm(self, ingredients, max_time):
-        user = self.get_current_user()
-        user_recipes = self.fetch_recipes_by_user(user.username)
-
-        time_weight = 0.6
-        ingredient_weight = 0.4
-
-        recipe_scores = {}
-
-        for recipe in user_recipes:
-            score = 0
-
-            if recipe.cooking_time <= max_time:
-                score += (max_time - recipe.cooking_time) / \
-                    max_time * time_weight
-
-            recipe_ingredients = recipe.ingredients.split(',')
-            user_ingredients = ingredients.split(',')
-            common_ingredients = set(
-                recipe_ingredients) & set(user_ingredients)
-            score += len(common_ingredients) / \
-                len(user_ingredients) * ingredient_weight
-
-            recipe_scores[recipe] = score
-
-        sorted_recipes = sorted(recipe_scores.keys(),
-                                key=lambda r: recipe_scores[r], reverse=True)
-
-        return sorted_recipes
+    def search_recipes_algorithm(self, name, ingredients, max_time):
+        if max_time:
+            max_time = int(max_time)
+        return self._recipe_repository.search_recipes(name, max_time, ingredients)
 
     def get_random_recipe(self):
         current_user = self.get_current_user().username

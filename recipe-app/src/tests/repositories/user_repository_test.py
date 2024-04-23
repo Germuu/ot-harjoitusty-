@@ -12,5 +12,10 @@ class TestUserRepository(unittest.TestCase):
     def test_adding(self):
         user_repository.add_user(self.test_user1)
         all_users = user_repository.retrieve_all()
-
         self.assertEqual(all_users[0].username, "admin")
+    
+    def test_find_by_username(self):
+        user_repository.add_user(self.test_user1)
+        user = user_repository.find_by_username("admin")
+        self.assertEqual(user.username, User("admin", "1234").username)
+

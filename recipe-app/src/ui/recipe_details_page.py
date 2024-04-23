@@ -3,9 +3,10 @@ from tkinter import constants
 
 
 class RecipeDetailsPage:
-    def __init__(self, root, recipe):
+    def __init__(self, root, recipe, go_back_callback):
         self._root = root
         self._recipe = recipe
+        self._go_back_callback = go_back_callback
         self._frame = None
 
         self.initialize()
@@ -37,3 +38,8 @@ class RecipeDetailsPage:
         time_label.grid(row=2, column=0, sticky="w", padx=5, pady=5)
         time_value = tk.Label(self._frame, text=str(self._recipe.cooking_time))
         time_value.grid(row=2, column=1, padx=5, pady=5)
+
+        # Back Button
+        back_button = tk.Button(self._frame, text="Back",
+                                command=self._go_back_callback)
+        back_button.grid(row=3, columnspan=2, padx=5, pady=5)
