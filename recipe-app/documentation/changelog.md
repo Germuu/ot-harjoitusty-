@@ -43,6 +43,7 @@
 ### Added
 - Implemented functionality to edit recipes.
 - Integrated recipe management features with the UI, including recipe search and display.
+- added random recipe generation button to "find recipes" page
 - Implemented a service layer for recipe management.
 - Added recipe search functionality based on name, ingredients, and maximum cooking time.
 - Implemented functionality to display user's recipes on the UI.
