@@ -82,13 +82,13 @@ class RecipeRepository:
             return Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"])
 
         return None
-    
+
     def search_recipes(self, name, max_time, ingredients):
         query = "SELECT * FROM recipes WHERE name LIKE ? AND cooking_time <= ? AND ingredients LIKE ?"
         cursor = self._connection.cursor()
         cursor.execute(query, (f"%{name}%", max_time, f"%{ingredients}%"))
         rows = cursor.fetchall()
-        return [Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"]) for row in rows]    
+        return [Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"]) for row in rows]
 
 
 recipe_repository = RecipeRepository(get_database_connection())
