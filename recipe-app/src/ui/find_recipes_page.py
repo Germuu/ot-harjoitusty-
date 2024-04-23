@@ -63,8 +63,9 @@ class FindRecipesPage:
         name = self.name_entry.get()
         ingredients = self.ingredients_entry.get()
         max_time = self.max_time_entry.get()
+        username = recipe_app_service.get_current_user().username
         search_results = recipe_app_service.search_recipes_algorithm(
-            name, ingredients, max_time)
+            name, ingredients, max_time, username)
 
         self._handle_search(search_results)
 

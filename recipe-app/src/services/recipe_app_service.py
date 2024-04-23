@@ -95,10 +95,10 @@ class RecipeAppService:
 
     # Under construction
 
-    def search_recipes_algorithm(self, name, ingredients, max_time):
+    def search_recipes_algorithm(self, name, ingredients, max_time, username):
         if max_time:
             max_time = int(max_time)
-        return self._recipe_repository.search_recipes(name, max_time, ingredients)
+        return self._recipe_repository.search_recipes(name, max_time, ingredients, username)
 
     def get_random_recipe(self):
         current_user = self.get_current_user().username
