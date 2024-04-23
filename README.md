@@ -26,7 +26,7 @@ This application aims to simplify the often tedious task of deciding what to coo
    ```bash
    poetry run invoke start
 
-Note : When creating a recipe ingredients must be comma separated
+** Note : When creating a recipe ingredients must be comma separated **
    
 
 ## TESTING
