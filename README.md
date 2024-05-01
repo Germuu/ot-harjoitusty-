@@ -20,9 +20,12 @@ This application aims to simplify the often tedious task of deciding what to coo
 1. Install dependencies using the following command:
    ```bash
    poetry install
-   
 
-2. Start the login window
+2. Initialize database using following command:
+   ```bash
+   poetry run invoke init-database
+
+3. Start the login window
    ```bash
    poetry run invoke start
 
