@@ -45,15 +45,16 @@ class SearchResultsPage:
 
         if not self._search_results:
             no_results_label = tk.Label(self._frame, text="No recipes found")
-            no_results_label.pack()
+            no_results_label.grid(row=0, column=0, pady=5)  # Use grid here
 
-            back_button = tk.Button(self._frame, text="Back",
-                                    command=self._handle_back)
-            back_button.pack()
-        else:
+        back_button = tk.Button(self._frame, text="Back",
+                                command=self._handle_back)
+        back_button.grid(row=1, column=0, pady=5)  # Use grid here
+
+        if self._search_results:
             for i, recipe in enumerate(self._search_results):
                 recipe_frame = tk.Frame(self._frame, borderwidth=2, relief="solid")
-                recipe_frame.grid(row=i, column=0, sticky="ew", padx=5, pady=5)
+                recipe_frame.grid(row=i + 2, column=0, sticky="ew", padx=5, pady=5)  # Use grid here
 
                 recipe_frame.bind("<Enter>", lambda event,
                                 frame=recipe_frame: self._on_enter(frame))
@@ -75,6 +76,8 @@ class SearchResultsPage:
                 time_label = tk.Label(
                     recipe_frame, text=f"Max Time: {recipe.cooking_time}")
                 time_label.pack(anchor="w")
+
+
 
     def _handle_recipe_click(self, recipe):
         """
