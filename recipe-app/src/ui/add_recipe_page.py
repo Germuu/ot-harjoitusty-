@@ -4,7 +4,22 @@ from services.recipe_app_service import recipe_app_service
 
 
 class AddRecipePage:
+    """
+    Class representing the Add Recipe page.
+
+    Args:
+        root: The root Tkinter window.
+        handle_save: The function to handle saving the recipe.
+    """
+
     def __init__(self, root, handle_save):
+        """
+        Initializes a new AddRecipePage object.
+
+        Args:
+            root: The root Tkinter window.
+            handle_save: The function to handle saving the recipe.
+        """
         self._root = root
         self._handle_save = handle_save
         self._frame = None
@@ -16,12 +31,17 @@ class AddRecipePage:
         self.initialize()
 
     def pack(self):
+        """Packs the add recipe frame into the root window."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Destroys the add recipe frame."""
         self._frame.destroy()
 
     def add(self):
+        """
+        Adds a new recipe with the input values and notifies the user of the outcome.
+        """
         # Get the input values from the entry fields
         name = self._name_entry.get()
         ingredients = self._ingredients_entry.get()
@@ -41,7 +61,7 @@ class AddRecipePage:
 
         # Call the service method to add the recipe
         new_recipe = recipe_app_service.create_recipe(
-            name, time, ingredients, self._current_user.username)
+            name, ingredients, time, self._current_user.username)
         if new_recipe:
             messagebox.showinfo(
                 "Success", f"Recipe '{name}' added successfully")
@@ -50,6 +70,7 @@ class AddRecipePage:
             messagebox.showerror("Error", f"Recipe '{name}' already exists")
 
     def initialize(self):
+        """Initializes the add recipe frame with entry fields and add button."""
         self._frame = tk.Frame(master=self._root)
 
         name_label = tk.Label(self._frame, text="Name:")

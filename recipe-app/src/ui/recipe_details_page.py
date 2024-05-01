@@ -1,9 +1,25 @@
 import tkinter as tk
 from tkinter import constants
 
-
 class RecipeDetailsPage:
+    """
+    Class representing the recipe details page.
+
+    Args:
+        root: The root Tkinter window.
+        recipe: The recipe object to display details of.
+        go_back_callback: The function to handle going back to the previous page.
+    """
+
     def __init__(self, root, recipe, go_back_callback):
+        """
+        Initializes a new RecipeDetailsPage object.
+
+        Args:
+            root: The root Tkinter window.
+            recipe: The recipe object to display details of.
+            go_back_callback: The function to handle going back to the previous page.
+        """
         self._root = root
         self._recipe = recipe
         self._go_back_callback = go_back_callback
@@ -12,12 +28,15 @@ class RecipeDetailsPage:
         self.initialize()
 
     def pack(self):
+        """Packs the recipe details frame into the root window."""
         self._frame.pack(fill=tk.BOTH, expand=True)
 
     def destroy(self):
+        """Destroys the recipe details frame."""
         self._frame.destroy()
 
     def initialize(self):
+        """Initializes the recipe details frame."""
         self._frame = tk.Frame(master=self._root)
 
         # Recipe Name

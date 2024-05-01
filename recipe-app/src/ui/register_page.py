@@ -2,9 +2,23 @@ import tkinter as tk
 from tkinter import messagebox, constants
 from services.recipe_app_service import recipe_app_service
 
-
 class RegistrationPage:
-    def __init__(self, root,  handle_register):
+    """
+    Class representing the registration page.
+
+    Args:
+        root: The root Tkinter window.
+        handle_register: The function to handle registration.
+    """
+
+    def __init__(self, root, handle_register):
+        """
+        Initializes a new RegistrationPage object.
+
+        Args:
+            root: The root Tkinter window.
+            handle_register: The function to handle registration.
+        """
         self._root = root
         self._handle_register = handle_register
         self._frame = None
@@ -14,12 +28,15 @@ class RegistrationPage:
         self.initialize()
 
     def pack(self):
+        """Packs the registration frame into the root window."""
         self.frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Destroys the registration frame."""
         self.frame.destroy()
 
     def register(self):
+        """Handles the registration process."""
         username = self.username_entry.get()
         password = self.password_entry.get()
 
@@ -28,10 +45,10 @@ class RegistrationPage:
             messagebox.showinfo("Registration", "Registration successful")
             self._handle_register()
         except:
-            print(recipe_app_service.register_user(username, password))
             messagebox.showerror("Registration Error", "Username taken")
 
     def initialize(self):
+        """Initializes the registration frame."""
         self.frame = tk.Frame(master=self._root)
 
         self.username_label = tk.Label(self.frame, text="Username:")

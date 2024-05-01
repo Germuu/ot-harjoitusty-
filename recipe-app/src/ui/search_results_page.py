@@ -4,7 +4,24 @@ from services.recipe_app_service import recipe_app_service
 
 
 class SearchResultsPage:
+    """
+    Class representing the search results page.
+
+    Args:
+        root: The root Tkinter window.
+        search_results: The list of recipes to display as search results.
+        handle_recipe_details: The function to handle clicks on recipe details.
+    """
+
     def __init__(self, root, search_results, handle_recipe_details):
+        """
+        Initializes a new SearchResultsPage object.
+
+        Args:
+            root: The root Tkinter window.
+            search_results: The list of recipes to display as search results.
+            handle_recipe_details: The function to handle clicks on recipe details.
+        """
         self._root = root
         self._search_results = search_results
         self._handle_recipe_details = handle_recipe_details
@@ -13,12 +30,15 @@ class SearchResultsPage:
         self.initialize()
 
     def pack(self):
+        """Packs the search results frame into the root window."""
         self._frame.pack(fill=tk.BOTH, expand=True)
 
     def destroy(self):
+        """Destroys the search results frame."""
         self._frame.destroy()
 
     def initialize(self):
+        """Initializes the search results frame and displays search results."""
         self._frame = tk.Frame(master=self._root)
 
         # Display search results
@@ -49,12 +69,28 @@ class SearchResultsPage:
             time_label.pack(anchor="w")
 
     def _handle_recipe_click(self, recipe):
+        """
+        Handles the click event on a recipe frame.
+
+        Args:
+            recipe: The recipe object associated with the clicked frame.
+        """
         self._handle_recipe_details(recipe)
 
     def _on_enter(self, frame):
-        # Change background color to light grey when mouse enters
+        """
+        Changes background color to light grey when mouse enters a recipe frame.
+
+        Args:
+            frame: The recipe frame where the mouse entered.
+        """
         frame.config(bg="lightblue")
 
     def _on_leave(self, frame):
-        # Change background color back to white when mouse leaves
+        """
+        Changes background color back to white when mouse leaves a recipe frame.
+
+        Args:
+            frame: The recipe frame where the mouse left.
+        """
         frame.config(bg="white")

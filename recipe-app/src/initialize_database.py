@@ -1,7 +1,12 @@
 from database_connection import get_database_connection
 
-
 def drop_tables(connection):
+    """
+    Delete database tables
+
+    Args:
+        connection: Database connection object.
+    """
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -16,6 +21,12 @@ def drop_tables(connection):
 
 
 def create_tables(connection):
+    """
+    Create tables in the database 
+
+    Args:
+        connection: Database connection object.
+    """
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -32,7 +43,7 @@ def create_tables(connection):
             name TEXT NOT NULL,
             cooking_time INTEGER NOT NULL,
             ingredients TEXT NOT NULL,
-            username TEXT,  -- Define the username column in the recipes table
+            username TEXT,
             FOREIGN KEY (username) REFERENCES users(username)
         )
     ''')
@@ -41,6 +52,9 @@ def create_tables(connection):
 
 
 def initialize_database():
+    """
+    Initialize the database by dropping existing tables and creating new ones.
+    """
     connection = get_database_connection()
 
     drop_tables(connection)

@@ -2,9 +2,25 @@ import tkinter as tk
 from tkinter import messagebox, constants
 from services.recipe_app_service import recipe_app_service
 
-
 class EditRecipe:
+    """
+    Class representing the Edit Recipe page.
+
+    Args:
+        root: The root Tkinter window.
+        handle_save: The function to handle saving changes to the recipe.
+        recipe_to_edit: The recipe object to edit.
+    """
+
     def __init__(self, root, handle_save, recipe_to_edit):
+        """
+        Initializes a new EditRecipe object.
+
+        Args:
+            root: The root Tkinter window.
+            handle_save: The function to handle saving changes to the recipe.
+            recipe_to_edit: The recipe object to edit.
+        """
         self._root = root
         self._handle_save = handle_save
         self._recipe_to_edit = recipe_to_edit
@@ -13,12 +29,15 @@ class EditRecipe:
         self.initialize()
 
     def pack(self):
+        """Packs the edit recipe frame into the root window."""
         self._frame.pack(fill=tk.BOTH, expand=True)
 
     def destroy(self):
+        """Destroys the edit recipe frame."""
         self._frame.destroy()
 
     def initialize(self):
+        """Initializes the edit recipe frame with entry fields and save button."""
         self._frame = tk.Frame(master=self._root)
 
         # Name
@@ -47,6 +66,9 @@ class EditRecipe:
         save_button.grid(row=3, columnspan=2, padx=5, pady=5)
 
     def edit(self):
+        """
+        Saves the changes made to the recipe and notifies the user.
+        """
         # Get the new values from the entry fields
         new_name = self._name_entry.get()
         new_ingredients = self._ingredients_entry.get()

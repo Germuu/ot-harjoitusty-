@@ -1,39 +1,61 @@
 import hashlib
 from entities.recipe import Recipe
 from entities.user import User
-
-
-from repositories.recipe_repository import (
-    recipe_repository as default_recipe_repository
-)
-
-from repositories.user_repository import (
-    user_repository as default_user_repository
-)
-
+from repositories.recipe_repository import recipe_repository as default_recipe_repository
+from repositories.user_repository import user_repository as default_user_repository
 
 class RecipeAppService:
-    def __init__(
-        self,
-        recipe_repository=default_recipe_repository,
-        user_repository=default_user_repository
-    ):
+    """
+    Service class for handling interactions with recipes and users.
+
+    Args:
+        recipe_repository: An instance of RecipeRepository for managing recipes.
+        user_repository: An instance of UserRepository for managing users.
+    """
+
+    def __init__(self, recipe_repository=default_recipe_repository, user_repository=default_user_repository):
+        """
+        Initializes a new RecipeAppService object.
+
+        Args:
+            recipe_repository: An instance of RecipeRepository for managing recipes.
+            user_repository: An instance of UserRepository for managing users.
+        """
         self._user = None
         self._recipe_repository = recipe_repository
         self._user_repository = user_repository
 
     def register_user(self, username, password):
+        """
+        Register a new user.
 
+        Args:
+            username (str): The username of the new user.
+            password (str): The password of the new user.
+
+        Returns:
+            User: The newly registered user object, or None if registration fails.
+        """
         existing_user = self._user_repository.find_by_username(username)
         if existing_user:
             print(f"Username {username} already in use")
+            return None
         else:
             new_user = User(username, password)
             self._user_repository.add_user(new_user)
-
-        return new_user
+            return new_user
 
     def login(self, username, password):
+        """
+        Log in a user.
+
+        Args:
+            username (str): The username of the user.
+            password (str): The password of the user.
+
+        Returns:
+            User or None: The logged-in user object, or None if login fails.
+        """
         user = self._user_repository.find_by_username(username)
         if user:
             if user.password == hashlib.sha256(password.encode()).hexdigest():
@@ -44,67 +66,149 @@ class RecipeAppService:
         else:
             print("User not found")
             return None
-
         return user
 
     def get_current_user(self):
+        """
+        Get the currently logged-in user.
+
+        Returns:
+            User: The currently logged-in user object.
+        """
         return self._user
 
     def logout(self):
+        """Log out the currently logged-in user."""
         self._user = None
 
     def create_recipe(self, name, ingredients, time, username):
-        # Check if a recipe with the same name already exists
+        """
+        Create a new recipe.
+
+        Args:
+            name (str): The name of the recipe.
+            ingredients (str): The ingredients of the recipe.
+            time (int): The cooking time of the recipe.
+            username (str): The username of the recipe creator.
+
+        Returns:
+            Recipe: The newly created recipe object.
+        """
         existing_recipe = self._recipe_repository.find_by_name(name)
         if existing_recipe:
             print(f"A recipe with the name '{name}' already exists.")
             return None
-
         new_recipe = Recipe(name, ingredients, time, username)
         self._recipe_repository.create(new_recipe)
-
         return new_recipe
 
     def get_all_recipes(self):
+        """
+        Retrieve all recipes.
+
+        Returns:
+            list: A list of Recipe objects representing all recipes.
+        """
         return self._recipe_repository.retrieve_all()
 
     def find_recipe_by_name(self, name):
+        """
+        Find a recipe by name.
+
+        Args:
+            name (str): The name of the recipe to find.
+
+        Returns:
+            Recipe or None: The found recipe object, or None if not found.
+        """
         return self._recipe_repository.find_by_name(name)
 
     def find_recipes_by_cooking_time(self, max_cooking_time):
+        """
+        Find recipes by maximum cooking time.
+
+        Args:
+            max_cooking_time (int): The maximum cooking time.
+
+        Returns:
+            list: A list of Recipe objects matching the criteria.
+        """
         return self._recipe_repository.find_by_cooking_time(max_cooking_time)
 
     def find_recipes_by_ingredients(self, ingredients):
+        """
+        Find recipes by ingredients.
+
+        Args:
+            ingredients (str): The ingredients to search for.
+
+        Returns:
+            list: A list of Recipe objects matching the criteria.
+        """
         return self._recipe_repository.find_by_ingredients(ingredients)
 
     def fetch_recipes_by_user(self, username):
+        """
+        Fetch recipes by user.
+
+        Args:
+            username (str): The username of the user.
+
+        Returns:
+            list: A list of Recipe objects created by the specified user.
+        """
         return self._recipe_repository.fetch_recipes_by_user(username)
 
     def delete_recipe(self, recipe_name):
+        """
+        Delete a recipe.
+
+        Args:
+            recipe_name (str): The name of the recipe to delete.
+        """
         return self._recipe_repository.delete_by_name(recipe_name)
 
     def update_recipe(self, recipe, new_name, new_cooking_time, new_ingredients):
-        # Check if the recipe exists
+        """
+        Update a recipe.
+
+        Args:
+            recipe (Recipe): The original recipe object to be updated.
+            new_name (str): The new name of the recipe.
+            new_cooking_time (int): The new cooking time of the recipe.
+            new_ingredients (str): The new ingredients of the recipe.
+        """
         existing_recipe = recipe
         if not existing_recipe:
             print(f"Recipe with name {recipe.name} not found.")
-
-        # Update the recipe
-        self._recipe_repository.update_recipe(
-            recipe, new_name, new_cooking_time, new_ingredients)
-
-    # Under construction
+        self._recipe_repository.update_recipe(recipe, new_name, new_cooking_time, new_ingredients)
 
     def search_recipes_algorithm(self, name, ingredients, max_time, username):
+        """
+        Search recipes by specified criteria.
+
+        Args:
+            name (str): The name of the recipe.
+            ingredients (str): The ingredients of the recipe.
+            max_time (int): The maximum cooking time of the recipe.
+            username (str): The username of the recipe creator.
+
+        Returns:
+            list: A list of Recipe objects matching the criteria.
+        """
         if max_time:
             max_time = int(max_time)
         return self._recipe_repository.search_recipes(name, max_time, ingredients, username)
 
     def get_random_recipe(self):
-        current_user = self.get_current_user().username
-        random_recipe = self._recipe_repository.get_random_recipe_for_user(
-            current_user)
+        """
+        Get a random recipe.
 
+        Returns:
+            Recipe: A random Recipe object.
+        """
+        current_user = self.get_current_user().username
+        random_recipe = self._recipe_repository.get_random_recipe_for_user(current_user)
         return random_recipe
 
 

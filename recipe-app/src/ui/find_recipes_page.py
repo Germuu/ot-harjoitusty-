@@ -2,9 +2,25 @@ import tkinter as tk
 from tkinter import messagebox
 from services.recipe_app_service import recipe_app_service
 
-
 class FindRecipesPage:
+    """
+    Class representing the Find Recipes page.
+
+    Args:
+        root: The root Tkinter window.
+        handle_search: The function to handle searching for recipes.
+        handle_homepage: The function to handle navigating back to the homepage.
+    """
+
     def __init__(self, root, handle_search, handle_homepage):
+        """
+        Initializes a new FindRecipesPage object.
+
+        Args:
+            root: The root Tkinter window.
+            handle_search: The function to handle searching for recipes.
+            handle_homepage: The function to handle navigating back to the homepage.
+        """
         self._root = root
         self._frame = None
         self._handle_search = handle_search
@@ -13,12 +29,15 @@ class FindRecipesPage:
         self.initialize()
 
     def pack(self):
+        """Packs the find recipes frame into the root window."""
         self._frame.pack(fill=tk.BOTH, expand=True)
 
     def destroy(self):
+        """Destroys the find recipes frame."""
         self._frame.destroy()
 
     def initialize(self):
+        """Initializes the find recipes frame with search criteria and buttons."""
         self._frame = tk.Frame(master=self._root)
 
         # Name
@@ -59,7 +78,9 @@ class FindRecipesPage:
         homepage_button.grid(row=6, columnspan=2, padx=5, pady=5)
 
     def display_search(self):
-        # Collect search criteria from UI
+        """
+        Collects search criteria from UI and triggers a search for recipes.
+        """
         name = self.name_entry.get()
         ingredients = self.ingredients_entry.get()
         max_time = self.max_time_entry.get()
@@ -70,5 +91,8 @@ class FindRecipesPage:
         self._handle_search(search_results)
 
     def random_recipe(self):
+        """
+        Retrieves a random recipe and displays its name.
+        """
         random_recipe = recipe_app_service.get_random_recipe()
         self.random_recipe_label.config(text=random_recipe.name)

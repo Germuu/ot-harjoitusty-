@@ -2,9 +2,29 @@ import tkinter as tk
 from tkinter import messagebox, constants
 from services.recipe_app_service import recipe_app_service
 
-
 class MyRecipesPage:
+    """
+    Class representing the My Recipes page.
+
+    Args:
+        root: The root Tkinter window.
+        handle_add: The function to handle adding a recipe.
+        edit_recipe: The function to handle editing a recipe.
+        handle_home_page: The function to handle going back to the home page.
+        handle_refresh: The function to handle refreshing the page.
+    """
+
     def __init__(self, root, handle_add, edit_recipe, handle_home_page, handle_refresh):
+        """
+        Initializes a new MyRecipesPage object.
+
+        Args:
+            root: The root Tkinter window.
+            handle_add: The function to handle adding a recipe.
+            edit_recipe: The function to handle editing a recipe.
+            handle_home_page: The function to handle going back to the home page.
+            handle_refresh: The function to handle refreshing the page.
+        """
         self._root = root
         self._handle_add = handle_add
         self._handle_home_page = handle_home_page
@@ -16,12 +36,15 @@ class MyRecipesPage:
         self.initialize()
 
     def pack(self):
+        """Packs the My Recipes frame into the root window."""
         self._frame.pack(fill=tk.BOTH, expand=True)
 
     def destroy(self):
+        """Destroys the My Recipes frame."""
         self._frame.destroy()
 
     def initialize(self):
+        """Initializes the My Recipes frame."""
         self._frame = tk.Frame(master=self._root)
 
         label = tk.Label(self._frame, text="My Recipes")
@@ -59,5 +82,11 @@ class MyRecipesPage:
         back_button.pack(side=tk.BOTTOM)
 
     def delete_recipe(self, recipe_name):
+        """
+        Deletes the specified recipe.
+
+        Args:
+            recipe_name: The name of the recipe to delete.
+        """
         recipe_app_service.delete_recipe(recipe_name)
         self._handle_refresh()
