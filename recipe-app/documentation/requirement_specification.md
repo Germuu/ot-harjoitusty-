@@ -28,7 +28,7 @@ The application currently supports a single-user role, with the flexibility to a
 ### After Logging In
 
 - **Home Menu**:
-  - Upon logging in, users are directed to the Home menu. ;&#10004
+  - Upon logging in, users are directed to the Home menu. &#10004;
   - The Home menu includes two buttons:
     * **My Recipes**: Takes users to a catalog of their previously created recipes. &#10004;
       - Users can delete recipes using the X button. &#10004;
