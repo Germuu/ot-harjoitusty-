@@ -39,43 +39,43 @@ class FindRecipesPage:
 
     def initialize(self):
         """Initializes the find recipes frame with search criteria and buttons."""
-        self._frame = tk.Frame(master=self._root)
+        self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
 
         # Name
-        name_label = tk.Label(self._frame, text="Name:")
+        name_label = tk.Label(self._frame, text="Name:", bg="#1E1E1E", fg="white")
         name_label.grid(row=0, column=0, sticky="w", padx=5, pady=5)
         self.name_entry = tk.Entry(self._frame)
         self.name_entry.grid(row=0, column=1, padx=5, pady=5)
 
         # Ingredients
-        ingredients_label = tk.Label(self._frame, text="Ingredients:")
+        ingredients_label = tk.Label(self._frame, text="Ingredients:", bg="#1E1E1E", fg="white")
         ingredients_label.grid(row=1, column=0, sticky="w", padx=5, pady=5)
         self.ingredients_entry = tk.Entry(self._frame)
         self.ingredients_entry.grid(row=1, column=1, padx=5, pady=5)
 
         # Max Time
-        time_label = tk.Label(self._frame, text="Max Time:")
+        time_label = tk.Label(self._frame, text="Max Time:", bg="#1E1E1E", fg="white")
         time_label.grid(row=2, column=0, sticky="w", padx=5, pady=5)
         self.max_time_entry = tk.Entry(self._frame)
         self.max_time_entry.grid(row=2, column=1, padx=5, pady=5)
 
         # Search Button
         search_button = tk.Button(
-            self._frame, text="Search", command=self.display_search)
+            self._frame, text="Search", command=self.display_search, bg="#444444", fg="white")
         search_button.grid(row=3, columnspan=2, padx=5, pady=5)
 
         # Random Button
         random_button = tk.Button(
-            self._frame, text="Random", command=self.random_recipe)
+            self._frame, text="Random", command=self.random_recipe, bg="#444444", fg="white")
         random_button.grid(row=4, columnspan=2, padx=5, pady=5)
 
         # Label to display random recipe
-        self.random_recipe_label = tk.Label(self._frame, text="")
+        self.random_recipe_label = tk.Label(self._frame, text="", bg="#1E1E1E", fg="white")
         self.random_recipe_label.grid(row=5, columnspan=2, padx=5, pady=5)
 
         # Button to go back to homepage
         homepage_button = tk.Button(
-            self._frame, text="Homepage", command=self._handle_homepage)
+            self._frame, text="Homepage", command=self._handle_homepage, bg="#444444", fg="white")
         homepage_button.grid(row=6, columnspan=2, padx=5, pady=5)
 
     def display_search(self):

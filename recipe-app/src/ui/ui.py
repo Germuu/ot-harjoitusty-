@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import ttk
+from ttkthemes import ThemedStyle
 from ui.login_page import LoginPage
 from ui.register_page import RegistrationPage
 from ui.home_page import HomePage
@@ -28,6 +30,14 @@ class UI:
         self._root = root
         self._current_view = None
 
+        # Apply a dark theme
+        self._apply_dark_theme()
+
+    def _apply_dark_theme(self):
+        """Applies a dark theme to the UI."""
+        style = ThemedStyle(self._root)
+        style.theme_use('equilux')
+
     def start(self):
         """Starts the user interface by displaying the login view."""
         self._show_login_view()
@@ -52,6 +62,7 @@ class UI:
         self._hide_current_view()
         self._current_view = RegistrationPage(
             self._root,
+            self._show_login_view,
             self._show_login_view  # Pass the registration handler here
         )
         self._current_view.pack()
@@ -84,6 +95,7 @@ class UI:
         self._hide_current_view()
         self._current_view = AddRecipePage(
             self._root,
+            self._show_my_recipes_view,
             self._show_my_recipes_view
         )
         self._current_view.pack()

@@ -10,18 +10,21 @@ class AddRecipePage:
     Args:
         root: The root Tkinter window.
         handle_save: The function to handle saving the recipe.
+        handle_back: The function to handle going back to the previous page.
     """
 
-    def __init__(self, root, handle_save):
+    def __init__(self, root, handle_save, handle_back):
         """
         Initializes a new AddRecipePage object.
 
         Args:
             root: The root Tkinter window.
             handle_save: The function to handle saving the recipe.
+            handle_back: The function to handle going back to the previous page.
         """
         self._root = root
         self._handle_save = handle_save
+        self._handle_back = handle_back
         self._frame = None
         self._name_entry = None
         self._ingredients_entry = None
@@ -64,23 +67,27 @@ class AddRecipePage:
 
     def initialize(self):
         """Initializes the add recipe frame with entry fields and add button."""
-        self._frame = tk.Frame(master=self._root)
+        self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
 
-        name_label = tk.Label(self._frame, text="Name:")
+        name_label = tk.Label(self._frame, text="Name:", bg="#1E1E1E", fg="white")
         name_label.pack()
         self._name_entry = tk.Entry(self._frame)
         self._name_entry.pack()
 
-        ingredients_label = tk.Label(self._frame, text="Ingredients:")
+        ingredients_label = tk.Label(self._frame, text="Ingredients:", bg="#1E1E1E", fg="white")
         ingredients_label.pack()
         self._ingredients_entry = tk.Entry(self._frame)
         self._ingredients_entry.pack()
 
-        time_label = tk.Label(self._frame, text="Cooking time in minutes:")
+        time_label = tk.Label(self._frame, text="Cooking time in minutes:", bg="#1E1E1E", fg="white")
         time_label.pack()
         self._time_entry = tk.Entry(self._frame)
         self._time_entry.pack()
 
         add_button = tk.Button(
-            self._frame, text="Add Recipe", command=self.add)
+            self._frame, text="Add Recipe", command=self.add, bg="#444444", fg="white")
         add_button.pack()
+
+        back_button = tk.Button(
+            self._frame, text="Back", command=self._handle_back, bg="#444444", fg="white")
+        back_button.pack()

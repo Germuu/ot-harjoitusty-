@@ -12,16 +12,18 @@ class RegistrationPage:
         handle_register: The function to handle registration.
     """
 
-    def __init__(self, root, handle_register):
+    def __init__(self, root, handle_register, handle_back):
         """
         Initializes a new RegistrationPage object.
 
         Args:
             root: The root Tkinter window.
             handle_register: The function to handle registration.
+            handle_back: The function to handle going back to the previous page.
         """
         self._root = root
         self._handle_register = handle_register
+        self._handle_back = handle_back
         self._frame = None
         self._username_entry = None
         self._password_entry = None
@@ -30,16 +32,16 @@ class RegistrationPage:
 
     def pack(self):
         """Packs the registration frame into the root window."""
-        self.frame.pack(fill=constants.X)
+        self._frame.pack(fill=constants.X)
 
     def destroy(self):
         """Destroys the registration frame."""
-        self.frame.destroy()
+        self._frame.destroy()
 
     def register(self):
         """Handles the registration process."""
-        username = self.username_entry.get()
-        password = self.password_entry.get()
+        username = self._username_entry.get()
+        password = self._password_entry.get()
 
         try:
             recipe_app_service.register_user(username, password)
@@ -50,18 +52,22 @@ class RegistrationPage:
 
     def initialize(self):
         """Initializes the registration frame."""
-        self.frame = tk.Frame(master=self._root)
+        self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
 
-        self.username_label = tk.Label(self.frame, text="Username:")
-        self.username_label.pack()
-        self.username_entry = tk.Entry(self.frame)
-        self.username_entry.pack()
+        self._username_label = tk.Label(self._frame, text="Username:", bg="#1E1E1E", fg="white")
+        self._username_label.pack()
+        self._username_entry = tk.Entry(self._frame)
+        self._username_entry.pack()
 
-        self.password_label = tk.Label(self.frame, text="Password:")
-        self.password_label.pack()
-        self.password_entry = tk.Entry(self.frame, show="*")
-        self.password_entry.pack()
+        self._password_label = tk.Label(self._frame, text="Password:", bg="#1E1E1E", fg="white")
+        self._password_label.pack()
+        self._password_entry = tk.Entry(self._frame, show="*")
+        self._password_entry.pack()
 
-        self.register_button = tk.Button(
-            self.frame, text="Register", command=self.register)
-        self.register_button.pack()
+        self._register_button = tk.Button(
+            self._frame, text="Register", command=self.register, bg="#444444", fg="white")
+        self._register_button.pack()
+
+        self._back_button = tk.Button(
+            self._frame, text="Back", command=self._handle_back, bg="#444444", fg="white")
+        self._back_button.pack()

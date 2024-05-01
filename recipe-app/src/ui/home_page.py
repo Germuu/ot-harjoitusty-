@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox, constants
+from tkinter import ttk, messagebox, constants
 from services.recipe_app_service import recipe_app_service
 
 
@@ -36,7 +36,9 @@ class HomePage:
 
     def pack(self):
         """Packs the home page frame into the root window."""
-        self._frame.pack(fill=constants.X)
+        self._frame.grid(row=0, column=0, sticky="nsew")
+        self._root.grid_rowconfigure(0, weight=1)
+        self._root.grid_columnconfigure(0, weight=1)
 
     def destroy(self):
         """Destroys the home page frame."""
@@ -46,18 +48,21 @@ class HomePage:
         """Initializes the home page frame with welcome message and buttons."""
         self._frame = tk.Frame(master=self._root)
 
-        label = tk.Label(self._frame, text=(
-            f"Welcome! {self._current_user.username}"))
-        label.pack()
+        # Apply the theme to the frame
+        self._frame["bg"] = "#1E1E1E"  # Background color
 
-        my_recipes_button = tk.Button(
-            self._frame, text="My Recipes", command=self._handle_my_recipes)
-        my_recipes_button.pack()
+        label = tk.Label(self._frame, text=f"Welcome! {self._current_user.username}", bg="#1E1E1E", fg="white")
+        label.grid(row=0, column=0, columnspan=2, pady=10)
 
-        find_recipes_button = tk.Button(
-            self._frame, text="Find Recipes", command=self._handle_find_recipes)
-        find_recipes_button.pack()
+        # Apply the theme to the buttons
+        button_style = ttk.Style()
+        button_style.configure("Dark.TButton", foreground="white", background="#444444")
 
-        logout_button = tk.Button(
-            self._frame, text="Logout", command=self._handle_logout)
-        logout_button.pack()
+        my_recipes_button = ttk.Button(self._frame, text="My Recipes", style="Dark.TButton", command=self._handle_my_recipes)
+        my_recipes_button.grid(row=1, column=0, padx=10, pady=5)
+
+        find_recipes_button = ttk.Button(self._frame, text="Find Recipes", style="Dark.TButton", command=self._handle_find_recipes)
+        find_recipes_button.grid(row=1, column=1, padx=10, pady=5)
+
+        logout_button = ttk.Button(self._frame, text="Logout", style="Dark.TButton", command=self._handle_logout)
+        logout_button.grid(row=2, column=0, columnspan=2, pady=5)

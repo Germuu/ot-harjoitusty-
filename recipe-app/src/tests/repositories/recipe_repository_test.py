@@ -5,7 +5,6 @@ from entities.recipe import Recipe
 
 class TestRecipeRepository(unittest.TestCase):
     def setUp(self):
-        recipe_repository.delete_all()
         self.test_recipe1 = Recipe(
             "chicken pasta", 30, "parmesan, chicken, tomatos, basil", "admin")
         self.test_recipe2 = Recipe(

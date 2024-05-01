@@ -1,7 +1,6 @@
 import tkinter as tk
-from tkinter import messagebox, constants
+from tkinter import ttk, messagebox
 from services.recipe_app_service import recipe_app_service
-
 
 class LoginPage:
     """
@@ -33,7 +32,9 @@ class LoginPage:
 
     def pack(self):
         """Packs the login frame into the root window."""
-        self._frame.pack(fill=constants.X)
+        self._frame.grid(row=0, column=0, sticky="nsew")
+        self._root.grid_rowconfigure(0, weight=1)
+        self._root.grid_columnconfigure(0, weight=1)
 
     def destroy(self):
         """Destroys the login frame."""
@@ -57,26 +58,46 @@ class LoginPage:
         else:
             messagebox.showerror("Login Error", "Invalid username or password")
 
+    def _validate_password(self):
+        """
+        Validates the password entry.
+        Changes the style of the login button based on the length of the password.
+        """
+        password = self._password_entry.get()
+        if len(password) >= 4:
+            self._login_button.configure(style="Green.TButton")
+        else:
+            self._login_button.configure(style="Dark.TButton")
+
     def _initialize(self):
         """
         Initializes the login frame with username, password entries, and login/register buttons.
         """
         self._frame = tk.Frame(master=self._root)
 
-        username_label = tk.Label(self._frame, text="Username:")
-        username_label.pack()
+        # Apply the theme to the frame
+        self._frame["bg"] = "#1E1E1E"  # Background color
+
+        username_label = tk.Label(self._frame, text="Username:", bg="#1E1E1E", fg="white")
+        username_label.grid(row=0, column=0, sticky="w", padx=10, pady=5)
+
         self._username_entry = tk.Entry(self._frame)
-        self._username_entry.pack()
+        self._username_entry.grid(row=0, column=1, padx=10, pady=5)
 
-        password_label = tk.Label(self._frame, text="Password:")
-        password_label.pack()
+        password_label = tk.Label(self._frame, text="Password:", bg="#1E1E1E", fg="white")
+        password_label.grid(row=1, column=0, sticky="w", padx=10, pady=5)
+
         self._password_entry = tk.Entry(self._frame, show="*")
-        self._password_entry.pack()
+        self._password_entry.grid(row=1, column=1, padx=10, pady=5)
+        # Validate password entry when typing
+        self._password_entry.bind('<KeyRelease>', lambda event: self._validate_password())
 
-        self._login_button = tk.Button(
-            self._frame, text="Login", command=self.login)
-        self._login_button.pack()
+        # Create a style for the login button
+        self._root.style = ttk.Style()
+        self._root.style.configure("Green.TButton", foreground="black", background="green")
 
-        self._register_button = tk.Button(
-            self._frame, text="Register", command=self._handle_register_page)
-        self._register_button.pack()
+        self._login_button = ttk.Button(self._frame, text="Login", style="Dark.TButton", command=self.login)
+        self._login_button.grid(row=2, column=0, columnspan=2, pady=10)
+
+        register_button = ttk.Button(self._frame, text="Register", style="Dark.TButton", command=self._handle_register_page)
+        register_button.grid(row=3, column=0, columnspan=2, pady=5)

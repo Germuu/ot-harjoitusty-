@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import messagebox
-from services.recipe_app_service import recipe_app_service
 
 
 class SearchResultsPage:
@@ -11,6 +10,7 @@ class SearchResultsPage:
         root: The root Tkinter window.
         search_results: The list of recipes to display as search results.
         handle_recipe_details: The function to handle clicks on recipe details.
+        handle_back: The function to handle going back to the previous page.
     """
 
     def __init__(self, root, search_results, handle_recipe_details, handle_back):
@@ -21,6 +21,7 @@ class SearchResultsPage:
             root: The root Tkinter window.
             search_results: The list of recipes to display as search results.
             handle_recipe_details: The function to handle clicks on recipe details.
+            handle_back: The function to handle going back to the previous page.
         """
         self._root = root
         self._search_results = search_results
@@ -40,22 +41,21 @@ class SearchResultsPage:
 
     def initialize(self):
         """Initializes the search results frame and displays search results."""
-        self._frame = tk.Frame(master=self._root)
+        self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
 
         if not self._search_results:
-            no_results_label = tk.Label(self._frame, text="No recipes found")
-            no_results_label.grid(row=0, column=0, pady=5)  # Use grid here
+            no_results_label = tk.Label(self._frame, text="No recipes found", bg="#1E1E1E", fg="white")
+            no_results_label.grid(row=0, column=0, pady=5)
 
-        back_button = tk.Button(self._frame, text="Back",
-                                command=self._handle_back)
-        back_button.grid(row=1, column=0, pady=5)  # Use grid here
+        back_button = tk.Button(self._frame, text="Back", command=self._handle_back, bg="#444444", fg="white")
+        back_button.grid(row=1, column=0, pady=5)
 
         if self._search_results:
             for i, recipe in enumerate(self._search_results):
                 recipe_frame = tk.Frame(
-                    self._frame, borderwidth=2, relief="solid")
+                    self._frame, borderwidth=2, relief="solid", bg="white")
                 recipe_frame.grid(row=i + 2, column=0,
-                                  sticky="ew", padx=5, pady=5)  # Use grid here
+                                  sticky="ew", padx=5, pady=5)
 
                 recipe_frame.bind("<Enter>", lambda event,
                                   frame=recipe_frame: self._on_enter(frame))
@@ -66,17 +66,17 @@ class SearchResultsPage:
 
                 # Recipe name
                 name_label = tk.Label(
-                    recipe_frame, text=f"Name: {recipe.name}")
+                    recipe_frame, text=f"Name: {recipe.name}", bg="white")
                 name_label.pack(anchor="w")
 
                 # Recipe ingredients
                 ingredients_label = tk.Label(
-                    recipe_frame, text=f"Ingredients: {recipe.ingredients}")
+                    recipe_frame, text=f"Ingredients: {recipe.ingredients}", bg="white")
                 ingredients_label.pack(anchor="w")
 
                 # Recipe max time
                 time_label = tk.Label(
-                    recipe_frame, text=f"Max Time: {recipe.cooking_time}")
+                    recipe_frame, text=f"Max Time: {recipe.cooking_time}", bg="white")
                 time_label.pack(anchor="w")
 
     def _handle_recipe_click(self, recipe):
@@ -90,12 +90,12 @@ class SearchResultsPage:
 
     def _on_enter(self, frame):
         """
-        Changes background color to light grey when mouse enters a recipe frame.
+        Changes background color when mouse enters a recipe frame.
 
         Args:
             frame: The recipe frame where the mouse entered.
         """
-        frame.config(bg="lightblue")
+        frame.config(bg="lightgrey")
 
     def _on_leave(self, frame):
         """
