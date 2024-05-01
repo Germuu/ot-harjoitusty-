@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, constants
 from services.recipe_app_service import recipe_app_service
 
+
 class MyRecipesPage:
     """
     Class representing the My Recipes page.

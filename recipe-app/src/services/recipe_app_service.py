@@ -4,6 +4,7 @@ from entities.user import User
 from repositories.recipe_repository import recipe_repository as default_recipe_repository
 from repositories.user_repository import user_repository as default_user_repository
 
+
 class RecipeAppService:
     """
     Service class for handling interactions with recipes and users.
@@ -13,7 +14,8 @@ class RecipeAppService:
         user_repository: An instance of UserRepository for managing users.
     """
 
-    def __init__(self, recipe_repository=default_recipe_repository, user_repository=default_user_repository):
+    def __init__(self, recipe_repository=default_recipe_repository,
+                 user_repository=default_user_repository):
         """
         Initializes a new RecipeAppService object.
 
@@ -40,10 +42,10 @@ class RecipeAppService:
         if existing_user:
             print(f"Username {username} already in use")
             return None
-        else:
-            new_user = User(username, password)
-            self._user_repository.add_user(new_user)
-            return new_user
+
+        new_user = User(username, password)
+        self._user_repository.add_user(new_user)
+        return new_user
 
     def login(self, username, password):
         """
@@ -181,7 +183,8 @@ class RecipeAppService:
         existing_recipe = recipe
         if not existing_recipe:
             print(f"Recipe with name {recipe.name} not found.")
-        self._recipe_repository.update_recipe(recipe, new_name, new_cooking_time, new_ingredients)
+        self._recipe_repository.update_recipe(
+            recipe, new_name, new_cooking_time, new_ingredients)
 
     def search_recipes_algorithm(self, name, ingredients, max_time, username):
         """
@@ -208,7 +211,8 @@ class RecipeAppService:
             Recipe: A random Recipe object.
         """
         current_user = self.get_current_user().username
-        random_recipe = self._recipe_repository.get_random_recipe_for_user(current_user)
+        random_recipe = self._recipe_repository.get_random_recipe_for_user(
+            current_user)
         return random_recipe
 
 

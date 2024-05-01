@@ -1,6 +1,7 @@
 from entities.recipe import Recipe
 from database_connection import get_database_connection
 
+
 class RecipeRepository:
     """
     Repository for interacting with the recipes table in the database.
@@ -25,9 +26,11 @@ class RecipeRepository:
         Args:
             recipe (Recipe): The recipe object to be inserted.
         """
-        query = "INSERT INTO recipes (name, cooking_time, ingredients, username) VALUES (?, ?, ?, ?)"
-        self._connection.execute(
-            query, (recipe.name, recipe.cooking_time, recipe.ingredients, recipe.username))
+        query = ("INSERT INTO recipes "
+                 "(name, cooking_time, ingredients, username) "
+                 "VALUES (?, ?, ?, ?)")
+        self._connection.execute(query, (
+            recipe.name, recipe.cooking_time, recipe.ingredients, recipe.username))
         self._connection.commit()
 
     def retrieve_all(self):
@@ -40,7 +43,10 @@ class RecipeRepository:
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM recipes")
         rows = cursor.fetchall()
-        return [Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"]) for row in rows]
+        return [Recipe(row["name"],
+                       row["cooking_time"],
+                       row["ingredients"],
+                       row["username"]) for row in rows]
 
     def find_by_name(self, name):
         """
@@ -55,7 +61,10 @@ class RecipeRepository:
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM recipes WHERE name = ?", (name,))
         row = cursor.fetchone()
-        return Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"]) if row else None
+        return Recipe(row["name"],
+                      row["cooking_time"],
+                      row["ingredients"],
+                      row["username"]) if row else None
 
     def delete_all(self):
         """
@@ -67,18 +76,22 @@ class RecipeRepository:
 
     def find_by_cooking_time(self, max_cooking_time):
         """
-        Retrieve recipes from the recipes table with cooking times less than or equal to the specified maximum cooking time.
+        Retrieve recipes from the recipes table with cooking times <= cooking_time.
 
         Args:
             max_cooking_time (int): The maximum cooking time in minutes.
 
         Returns:
-            list: A list of Recipe objects representing recipes with cooking times less than or equal to the specified maximum cooking time.
+            list: A list of Recipe objects representing recipes with cooking times <= cooking_time.
         """
         cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM recipes WHERE cooking_time <= ?", (max_cooking_time,))
+        cursor.execute(
+            "SELECT * FROM recipes WHERE cooking_time <= ?", (max_cooking_time,))
         rows = cursor.fetchall()
-        return [Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"]) for row in rows]
+        return [Recipe(row["name"],
+                       row["cooking_time"],
+                       row["ingredients"],
+                       row["username"]) for row in rows]
 
     def fetch_recipes_by_user(self, username):
         """
@@ -93,7 +106,10 @@ class RecipeRepository:
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM recipes WHERE username = ?", (username,))
         rows = cursor.fetchall()
-        return [Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"]) for row in rows]
+        return [Recipe(row["name"],
+                       row["cooking_time"],
+                       row["ingredients"],
+                       row["username"]) for row in rows]
 
     def delete_by_name(self, name):
         """
@@ -129,14 +145,17 @@ class RecipeRepository:
             user (str): The username of the user.
 
         Returns:
-            Recipe or None: A random Recipe object created by the specified user, or None if no recipe is found.
+            Recipe or None: A random Recipe object for user, or None if no recipe is found.
         """
         query = "SELECT * FROM recipes WHERE username = ? ORDER BY RANDOM() LIMIT 1"
         cursor = self._connection.cursor()
         cursor.execute(query, (user,))
         row = cursor.fetchone()
         if row:
-            return Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"])
+            return Recipe(row["name"],
+                          row["cooking_time"],
+                          row["ingredients"],
+                          row["username"])
         return None
 
     def search_recipes(self, name, max_time, ingredients, username):
@@ -152,11 +171,19 @@ class RecipeRepository:
         Returns:
             list: A list of Recipe objects representing recipes matching the search criteria.
         """
-        query = "SELECT * FROM recipes WHERE name LIKE ? AND cooking_time <= ? AND ingredients LIKE ? AND username = ?"
+        query = ("SELECT * FROM recipes "
+                 "WHERE name LIKE ? "
+                 "AND cooking_time <= ? "
+                 "AND ingredients LIKE ? "
+                 "AND username = ?")
         cursor = self._connection.cursor()
-        cursor.execute(query, (f"%{name}%", max_time, f"%{ingredients}%", username))
+        cursor.execute(query, (f"%{name}%", max_time,
+                               f"%{ingredients}%", username))
         rows = cursor.fetchall()
-        return [Recipe(row["name"], row["cooking_time"], row["ingredients"], row["username"]) for row in rows]
+        return [Recipe(row["name"],
+                       row["cooking_time"],
+                       row["ingredients"],
+                       row["username"]) for row in rows]
 
-# Instantiate RecipeRepository with database connection
+
 recipe_repository = RecipeRepository(get_database_connection())

@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import constants
 
+
 class RecipeDetailsPage:
     """
     Class representing the recipe details page.
