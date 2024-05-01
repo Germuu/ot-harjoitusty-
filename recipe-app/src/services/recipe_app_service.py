@@ -215,5 +215,42 @@ class RecipeAppService:
             current_user)
         return random_recipe
 
+    def validate_recipe_input(self, name, ingredients, time):
+        """
+        Validate recipe input fields.
+
+        Args:
+            name (str): The name of the recipe.
+            ingredients (str): The ingredients of the recipe.
+            time (str): The cooking time of the recipe.
+
+        Returns:
+            tuple: A tuple containing a boolean and error message.
+        """
+        # Strip leading and trailing whitespace
+        name = name.strip()
+        ingredients = ingredients.strip()
+        time = time.strip()
+
+        # Length constraints
+        if len(name) == 0 or len(ingredients) == 0 or len(time) == 0:
+            return False, "All fields are required"
+
+        if len(name) > 100:
+            return False, "Recipe name must be 100 characters or less"
+
+        if len(ingredients) > 100:
+            return False, "Ingredients must be 100 characters or less"
+
+        # Try to convert time to integer and validate
+        try:
+            time = int(time)
+            if time <= 0 or time > 600:  # Maximum time set to 10 hours
+                raise ValueError
+        except ValueError:
+            return False, "Cooking time must positive and < 600"
+
+        return True, None
+
 
 recipe_app_service = RecipeAppService()

@@ -38,7 +38,6 @@ class SearchResultsPage:
         """Destroys the search results frame."""
         self._frame.destroy()
 
-
     def initialize(self):
         """Initializes the search results frame and displays search results."""
         self._frame = tk.Frame(master=self._root)
@@ -53,18 +52,21 @@ class SearchResultsPage:
 
         if self._search_results:
             for i, recipe in enumerate(self._search_results):
-                recipe_frame = tk.Frame(self._frame, borderwidth=2, relief="solid")
-                recipe_frame.grid(row=i + 2, column=0, sticky="ew", padx=5, pady=5)  # Use grid here
+                recipe_frame = tk.Frame(
+                    self._frame, borderwidth=2, relief="solid")
+                recipe_frame.grid(row=i + 2, column=0,
+                                  sticky="ew", padx=5, pady=5)  # Use grid here
 
                 recipe_frame.bind("<Enter>", lambda event,
-                                frame=recipe_frame: self._on_enter(frame))
+                                  frame=recipe_frame: self._on_enter(frame))
                 recipe_frame.bind("<Leave>", lambda event,
-                                frame=recipe_frame: self._on_leave(frame))
+                                  frame=recipe_frame: self._on_leave(frame))
                 recipe_frame.bind("<Button-1>", lambda event, r=recipe,
-                                frame=recipe_frame: self._handle_recipe_click(r))
+                                  frame=recipe_frame: self._handle_recipe_click(r))
 
                 # Recipe name
-                name_label = tk.Label(recipe_frame, text=f"Name: {recipe.name}")
+                name_label = tk.Label(
+                    recipe_frame, text=f"Name: {recipe.name}")
                 name_label.pack(anchor="w")
 
                 # Recipe ingredients
@@ -76,8 +78,6 @@ class SearchResultsPage:
                 time_label = tk.Label(
                     recipe_frame, text=f"Max Time: {recipe.cooking_time}")
                 time_label.pack(anchor="w")
-
-
 
     def _handle_recipe_click(self, recipe):
         """

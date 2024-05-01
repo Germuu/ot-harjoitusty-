@@ -42,30 +42,23 @@ class AddRecipePage:
         """
         Adds a new recipe with the input values and notifies the user of the outcome.
         """
-        # Get the input values from the entry fields
-        name = self._name_entry.get()
-        ingredients = self._ingredients_entry.get()
-        time = self._time_entry.get()
 
-        # Check if any field is empty
-        if not name or not ingredients or not time:
-            messagebox.showerror("Error", "All fields are required")
+        name = self._name_entry.get().strip()
+        ingredients = self._ingredients_entry.get().strip()
+        time = self._time_entry.get().strip()
+
+        validation_result, error_message = recipe_app_service.validate_recipe_input(
+            name, ingredients, time)
+        if not validation_result:
+            messagebox.showerror("Error", error_message)
             return
 
-        # Try to convert time to integer
-        try:
-            time = int(time)
-        except ValueError:
-            messagebox.showerror("Error", "Cooking time must be a number")
-            return
-
-        # Call the service method to add the recipe
         new_recipe = recipe_app_service.create_recipe(
             name, ingredients, time, self._current_user.username)
         if new_recipe:
             messagebox.showinfo(
                 "Success", f"Recipe '{name}' added successfully")
-            self._handle_save()  # Handle the successful addition
+            self._handle_save()
         else:
             messagebox.showerror("Error", f"Recipe '{name}' already exists")
 
