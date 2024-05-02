@@ -81,3 +81,12 @@ class MyRecipesPage:
         back_button = tk.Button(self._frame, text="Back",
                                 command=self._handle_home_page, bg="#444444", fg="white")
         back_button.pack(side=tk.BOTTOM)
+    
+    def delete_recipe(self, recipe_name):
+        """
+        Deletes the specified recipe.
+        Args:
+            recipe_name: The name of the recipe to delete.
+        """
+        recipe_app_service.delete_recipe(recipe_name)
+        self._handle_refresh()
