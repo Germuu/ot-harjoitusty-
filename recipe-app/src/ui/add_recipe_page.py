@@ -57,7 +57,7 @@ class AddRecipePage:
             return
 
         new_recipe = recipe_app_service.create_recipe(
-            name, ingredients, time, self._current_user.username)
+            name, time, ingredients, self._current_user.username)
         if new_recipe:
             messagebox.showinfo(
                 "Success", f"Recipe '{name}' added successfully")
