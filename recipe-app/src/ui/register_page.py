@@ -43,11 +43,10 @@ class RegistrationPage:
         username = self._username_entry.get()
         password = self._password_entry.get()
 
-        try:
-            recipe_app_service.register_user(username, password)
+        if recipe_app_service.register_user(username, password):
             messagebox.showinfo("Registration", "Registration successful")
             self._handle_register()
-        except:
+        else:
             messagebox.showerror("Registration Error", "Username taken")
 
     def initialize(self):
