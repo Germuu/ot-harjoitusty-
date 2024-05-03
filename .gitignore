@@ -1,4 +1,5 @@
 .pytest_cache
 __pycache__
 htmlcov
-recipe-app/data/database.sqlite
+data/database.sqlite
+
