@@ -5,6 +5,7 @@ from entities.user import User
 
 class TestUserRepository(unittest.TestCase):
     def setUp(self):
+        user_repository.clear()
         self.test_user1 = User("admin", "1234")
         self.test_user2 = User("Joe",   "4321")
 
