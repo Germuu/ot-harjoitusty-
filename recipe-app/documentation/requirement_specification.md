@@ -37,7 +37,7 @@ The application currently supports a single-user role, with the flexibility to a
     * **Find Recipes**: Directs users to the search tool. &#10004;
       - The search tool allows users to filter recipes based on various criteria. &#10004;
       - Users can generate a random recipe using the "random" button. &#10004;
-      - After applying filters and clicking the search button, recipes are ranked based on matching criteria. &#10004;
+      - After applying filters and clicking the search button, recipes are ranked based on matching criteria.&#10004;
       - Clicking on a recipe displays its relevant data. &#10004;
 
 ## Further Improvements
