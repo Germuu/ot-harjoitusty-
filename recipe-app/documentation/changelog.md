@@ -51,6 +51,22 @@
 - Added UI for inspecting recipe details.
 - started building prioritization for displayed recipes
 
+  ## [Week 6]
+
+### Added
+- Docstring
+- back buttons to pages
+- input validation implemented for recipes
+
+### Changed
+- user interface enhanced with ttkthemes
+- 
+### Fixed
+- Application crashing when no recipes found
+- recipe deletion
+- only some results displayed
+- username already in use message
+
 
 
 
