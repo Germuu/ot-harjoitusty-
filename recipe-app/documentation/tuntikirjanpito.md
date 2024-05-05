@@ -8,5 +8,9 @@
 | 16.4   | 6 hours      | Worked on pylint score, documentation (class diagram) and tuntikirjanpito.
 |22.3	   |6 hours	      |Implemented UI and services for editing recipes, debugging 
 |23.4	   |11 hours	    |Implemented recipe searching, random recipe generator, and recipe display after search. Worked on sequence diagram, changelog, and time tracking.
-|Total   | 55 hours           
+|1.5	   |0.75 hours	  | docstring adding  |
+|1.5	   |1 hours	      | Input validation and back button implementation   |
+|1.5     |5 hours       | learning ttkthemes and enhancing UI    |
+|2.5	   |4 hours	      | debugging issues with recipe display + general debugging  |
+|Total   |66 hours      |                                                                |
 

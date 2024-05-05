@@ -41,7 +41,7 @@ class RecipeAppService:
         existing_user = self._user_repository.find_by_username(username)
         if existing_user:
             print(f"Username {username} already in use")
-            return None
+            return False
 
         new_user = User(username, password)
         self._user_repository.add_user(new_user)
