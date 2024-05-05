@@ -60,7 +60,7 @@
 
 ### Changed
 - user interface enhanced with ttkthemes
-- 
+  
 ### Fixed
 - Application crashing when no recipes found
 - recipe deletion
