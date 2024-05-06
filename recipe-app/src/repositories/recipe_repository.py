@@ -74,24 +74,6 @@ class RecipeRepository:
         self._connection.execute(query)
         self._connection.commit()
 
-    def find_by_cooking_time(self, max_cooking_time):
-        """
-        Retrieve recipes from the recipes table with cooking times <= cooking_time.
-
-        Args:
-            max_cooking_time (int): The maximum cooking time in minutes.
-
-        Returns:
-            list: A list of Recipe objects representing recipes with cooking times <= cooking_time.
-        """
-        cursor = self._connection.cursor()
-        cursor.execute(
-            "SELECT * FROM recipes WHERE cooking_time <= ?", (max_cooking_time,))
-        rows = cursor.fetchall()
-        return [Recipe(row["name"],
-                       row["cooking_time"],
-                       row["ingredients"],
-                       row["username"]) for row in rows]
 
     def fetch_recipes_by_user(self, username):
         """
