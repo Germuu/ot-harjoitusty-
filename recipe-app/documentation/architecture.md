@@ -107,7 +107,7 @@ sequenceDiagram
   User ->> UI: Clicks search button
   UI ->> RecipeAppService: search_recipes_algorithm(name: "Chicken", max_time: 30, ingredients: "Tomato")
   RecipeAppService ->> RecipeRepository: search_recipes(name: "Chicken", max_time: 30, ingredients: "Tomato")
-  RecipeRepository ->> RecipeAppService: Matching recipes
+  RecipeRepository ->> RecipeAppService: results
   RecipeAppService ->> UI: results
   UI ->> UI: _show_results_view(self, results)
 ```
