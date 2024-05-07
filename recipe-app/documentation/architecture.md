@@ -53,7 +53,7 @@ All functions initiated by the user are managed by the **RecipeAppService** clas
 ```bash
 - search_recipes_algorithm(self, name, ingredients, max_time, username)
 
-```
+
 
 
 
