@@ -4,7 +4,7 @@
 Functionally distinct parts of the architecture are divided into a three-layer packaging structure shown below:
 ![Application Logic Diagram](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/class_diagram.png)
 
-The UI package takes care of the user interface, services of the application logic and repositories of the fetching and saving of data. Additionally, the entities package contains the classes "users" and "recipes", which define the relevant data items.
+The UI package takes care of the user interface, services of the application logic, and repositories of the fetching and saving of data. Additionally, the entities package contains the classes **User** and **Recipe**, which define the relevant data items.
 
 ## Sequence diagram for login
 
