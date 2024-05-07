@@ -8,7 +8,6 @@ Functionally distinct parts of the architecture are divided into a three-layer p
 The **UI** package takes care of the user interface, **services** of the application logic, and **repositories** of the fetching and storage of data. Additionally, the **entities** package contains the classes *User* and *Recipe*, which define the relevant data items.
 
 ## User interface
-
 The UI consists of 9 views:
 - login
 - register
@@ -24,7 +23,6 @@ The user interface (UI) of the application is structured into 9 distinct views, 
 
 
 ## Application logic
-
 The classes *User* and *Recipe* represent the user and recipe objects, which correspond to the contents of database tables:
 
 ```mermaid
@@ -66,13 +64,13 @@ RecipeAppService works as an interface between the UI and the repository classes
 
 
 ## Data storage
+The classes *RecipeRepository* and *UserRepository* of the **repositories** package handle the database interactions. Both classes handle data using a SQLite database.
 
+Both users and recipes are stored in their respective database tables users and recipes. The database tables are initialized using the initialize_database file.
 
+## Main functionalities
 
-
-
-## Sequence diagram for login
-
+### Sequence diagram for login
 ```mermaid
 sequenceDiagram
   actor User
