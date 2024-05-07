@@ -24,6 +24,8 @@ The user interface (UI) of the application is structured into 9 distinct views, 
 
 ## Application logic
 
+The classes *User* and *Recipe* represent the user and recipe objects, which correspond to the contents of database tables:
+
 ```mermaid
 classDiagram
     class User {
