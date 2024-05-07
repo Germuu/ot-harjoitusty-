@@ -26,6 +26,16 @@ The user interface (UI) of the application is structured into 9 distinct views, 
 
 ```mermaid
 classDiagram
+    class User {
+        username: string
+        password: string
+    }
+    class Recipe {
+        name: string
+        cooking_time: int
+        ingredients: string
+        username: string
+    }
     Recipe "*" -- "1" User
 ```
 
