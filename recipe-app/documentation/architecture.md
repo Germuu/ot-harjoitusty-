@@ -24,6 +24,11 @@ The user interface (UI) of the application is structured into 9 distinct views, 
 
 ## Application logic
 
+```mermaid
+classDiagram
+    Recipe "*" -- "1" User
+```
+
 
 
 
