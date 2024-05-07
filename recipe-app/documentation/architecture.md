@@ -52,6 +52,7 @@ All functions initiated by the user are managed by the **RecipeAppService** clas
 - create_recipe(self, name, ingredients, time, username)
 
 - search_recipes_algorithm(self, name, ingredients, max_time, username)
+
 ```
 
 
