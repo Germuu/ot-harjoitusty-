@@ -66,7 +66,7 @@ RecipeAppService works as an interface between the UI and the repository classes
 ## Data storage
 The classes *RecipeRepository* and *UserRepository* of the **repositories** package handle the database interactions. Both classes handle data using an SQLite database.
 
-Both users and recipes are stored in their respective database tables users and recipes. The database tables are initialized using the initialize_database file.
+Both users and recipes are stored in their respective database tables users and recipes. The database tables are initialized using the initialize_database.py file.
 
 ## Main functionalities
 
