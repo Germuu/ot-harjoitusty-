@@ -121,8 +121,12 @@ sequenceDiagram
 7. **UI**: Displays the search results to the user by invoking the _show_results_view method, passing the retrieved results.
 8. **UI**: Updates the view to show the search results to the user.
 
-
-
+### Other functionalities
+All user interactions in the application follow a similar logic:
+- User triggers an action in the UI.
+- UI invokes relevant methods in the RecipeAppService.
+- RecipeAppService processes the action, accessing data if needed.
+- UI updates based on the processed data.
 
 
 
