@@ -86,6 +86,17 @@ sequenceDiagram
   UI ->> UI : _show_home_view()
 
 
+1. The user interacts with the UI by pressing the login button.
+2. The UI sends a login request to the RecipeAppService, passing the username ("admin") and password ("1234") as parameters.
+3. The RecipeAppService receives the login request and communicates with the UserRepository to find the user with the provided username ("admin").
+4. The UserRepository searches for the user in the database and returns the user object to the RecipeAppService.
+5. The RecipeAppService receives the user object and sends it back to the UI.
+6. The UI receives the user object and proceeds to show the home view to the user, indicating a successful login.
+
+Overall, the sequence demonstrates the flow of interactions between the user, UI, RecipeAppService, and UserRepository during the login process, ultimately resulting in the presentation of the home view to the user upon successful authentication.
+
+
+
 
 
 
