@@ -12,5 +12,6 @@
 |1.5	   |1 hours	      | Input validation and back button implementation   |
 |1.5     |5 hours       | learning ttkthemes and enhancing UI    |
 |2.5	   |4 hours	      | debugging issues with recipe display + general debugging  |
-|Total   |66 hours      |                                                                |
+|5.5     |2 hours       | added more tests                                               |
+|Total   |68 hours      |                                                                |
 
