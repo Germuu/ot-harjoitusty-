@@ -105,12 +105,11 @@ sequenceDiagram
   participant RecipeAppService as Service
   participant RecipeRepository as Repository
   User ->> UI: Clicks search button
-  UI ->> UI: Validate search filters
-  UI ->> Service: Perform search (name: "Chicken", max_time: 30, ingredients: "Tomato")
-  Service ->> Repository: Search recipes (name: "Chicken", max_time: 30, ingredients: "Tomato")
-  Repository ->> Service: Matching recipes
-  Service ->> UI: Display search results
-  UI ->> UI: Render search results
+  UI ->> RecipeAppService: search_recipes_algorithm(name: "Chicken", max_time: 30, ingredients: "Tomato")
+  RecipeAppService ->> recipe_repository: search_recipes(name: "Chicken", max_time: 30, ingredients: "Tomato")
+  recipe_repository ->> RecipeAppService: Matching recipes
+  RecipeAppService ->> UI: results
+  UI ->> UI: _show_results_view(self, results)
 ```
 
 
