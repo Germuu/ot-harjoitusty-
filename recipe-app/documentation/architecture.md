@@ -61,11 +61,10 @@ create_recipe(self, name, ingredients, time, username)
 ```bash
 search_recipes_algorithm(self, name, ingredients, max_time, username)
 ```
+RecipeAppService works as an interface between the UI and the repository classes.
 
 
-
-
-
+## Data storage
 
 
 
