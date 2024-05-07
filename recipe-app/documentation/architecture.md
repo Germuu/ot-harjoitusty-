@@ -100,13 +100,13 @@ Overall, the sequence demonstrates the flow of interactions between the user, UI
 
 ```mermaid
 sequenceDiagram
-  participant User as User
+  participant User 
   participant UI as UI
-  participant RecipeAppService as Service
-  participant RecipeRepository as Repository
+  participant RecipeAppService 
+  participant RecipeRepository 
   User ->> UI: Clicks search button
   UI ->> RecipeAppService: search_recipes_algorithm(name: "Chicken", max_time: 30, ingredients: "Tomato")
-  RecipeAppService ->> recipe_repository: search_recipes(name: "Chicken", max_time: 30, ingredients: "Tomato")
+  RecipeAppService ->> RecipeRepository: search_recipes(name: "Chicken", max_time: 30, ingredients: "Tomato")
   recipe_repository ->> RecipeAppService: Matching recipes
   RecipeAppService ->> UI: results
   UI ->> UI: _show_results_view(self, results)
