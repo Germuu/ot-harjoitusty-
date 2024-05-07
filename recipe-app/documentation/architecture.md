@@ -6,6 +6,18 @@ Functionally distinct parts of the architecture are divided into a three-layer p
 
 The UI package takes care of the user interface, services of the application logic, and repositories of the fetching and saving of data. Additionally, the entities package contains the classes **User** and **Recipe**, which define the relevant data items.
 
+## User interface
+
+The UI consists of 9 views:
+- login
+- register
+- home
+- my recipes
+   - edit recipe
+- find recipes
+  - search results
+  - recipe details
+
 ## Sequence diagram for login
 
 ```mermaid
