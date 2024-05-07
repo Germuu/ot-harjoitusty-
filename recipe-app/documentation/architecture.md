@@ -122,11 +122,11 @@ sequenceDiagram
 8. **UI**: Updates the view to show the search results to the user.
 
 ### Other functionalities
-All user interactions in the application follow a similar logic:
-- User triggers an action in the UI.
-- UI invokes relevant methods in the RecipeAppService.
-- RecipeAppService processes the action, accessing data if needed.
-- UI updates based on the processed data.
+All user interactions in the application rougly follow a similar logic:
+1. User triggers an action in the UI.
+2. UI invokes relevant methods in the RecipeAppService.
+3. RecipeAppService processes the action, accessing data if needed.
+4. UI updates based on the processed data.
 
 
 
