@@ -96,6 +96,22 @@ sequenceDiagram
 
 Overall, the sequence demonstrates the flow of interactions between the user, UI, RecipeAppService, and UserRepository during the login process, ultimately resulting in the presentation of the home view to the user upon successful authentication.
 
+### searching for recipe based on criteria
+
+```mermaid
+sequenceDiagram
+  participant User as User
+  participant UI as UI
+  participant RecipeAppService as Service
+  participant RecipeRepository as Repository
+  User ->> UI: Clicks search button
+  UI ->> UI: Validate search filters
+  UI ->> Service: Perform search (name: "Chicken", max_time: 30, ingredients: "Tomato")
+  Service ->> Repository: Search recipes (name: "Chicken", max_time: 30, ingredients: "Tomato")
+  Repository ->> Service: Matching recipes
+  Service ->> UI: Display search results
+  UI ->> UI: Render search results
+```
 
 
 
