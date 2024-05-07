@@ -84,6 +84,7 @@ sequenceDiagram
   UserRepository ->> RecipeAppService : User
   RecipeAppService ->> UI : User
   UI ->> UI : _show_home_view()
+```
 
 
 1. The user interacts with the UI by pressing the login button.
