@@ -69,8 +69,9 @@ The classes *RecipeRepository* and *UserRepository* of the **repositories** pack
 Both users and recipes are stored in their respective database tables users and recipes. The database tables are initialized using the initialize_database.py file.
 
 ## Main functionalities
+Some main functionalities will be highlighted using sequence diagrams.
 
-### Sequence diagram for login
+### Login
 ```mermaid
 sequenceDiagram
   actor User
