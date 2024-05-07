@@ -43,8 +43,15 @@ classDiagram
 All functions initiated by the user are managed by the **RecipeAppService** class. Some methods provided by the class are:
 
 ```bash
-register_user(self, username, password)
+- register_user(self, username, password)
 
+- login(self, username, password)
+
+- get_current_user(self)
+
+- create_recipe(self, name, ingredients, time, username)
+
+- search_recipes_algorithm(self, name, ingredients, max_time, username)
 ```
 
 
