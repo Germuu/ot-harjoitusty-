@@ -20,6 +20,19 @@ The UI consists of 9 views:
   - recipe details
     
 The user interface (UI) of the application is structured into 9 distinct views, each implemented as its own class. Each view class is responsible for rendering the respective page's layout and handling user interactions within that page. By organizing the UI into separate classes, the codebase remains modular and easy to maintain, with a clear separation of concerns between different parts of the application. By the principle of separation of concerns, all logic is handled by calling methods contained in the *RecipeAppService* class.
+
+
+## Application logic
+
+
+
+
+
+
+
+
+
+
 ## Sequence diagram for login
 
 ```mermaid
