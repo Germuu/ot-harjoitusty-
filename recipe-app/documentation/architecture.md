@@ -44,13 +44,13 @@ All functions initiated by the user are managed by the **RecipeAppService** clas
 
 ```bash
 - register_user(self, username, password)
-
+```bash
 - login(self, username, password)
-
+```bash
 - get_current_user(self)
-
+```bash
 - create_recipe(self, name, ingredients, time, username)
-
+```bash
 - search_recipes_algorithm(self, name, ingredients, max_time, username)
 
 ```
