@@ -112,6 +112,16 @@ sequenceDiagram
   UI ->> UI: _show_results_view(self, results)
 ```
 
+1. **User**: Initiates the search process by clicking the search button on the UI.
+2. **UI**: Receives the search request from the user and forwards it to the RecipeAppService.
+3. **RecipeAppService**: Processes the search request using the search_recipes_algorithm, passing the search filters: name="Chicken", max_time=30, and ingredients="Tomato".
+4. **RecipeRepository**: Receives the search criteria from the RecipeAppService and executes the search_recipes method with the provided filters: name="Chicken", max_time=30, and ingredients="Tomato".
+5. **RecipeRepository**: Retrieves the search results based on the specified criteria and sends them back to the RecipeAppService.
+6. **RecipeAppService**: Receives the search results from the RecipeRepository.
+7. **UI**: Displays the search results to the user by invoking the _show_results_view method, passing the retrieved results.
+8. **UI**: Updates the view to show the search results to the user.
+
+
 
 
 
