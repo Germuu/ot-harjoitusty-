@@ -13,6 +13,7 @@ The UI consists of 9 views:
 - register
 - home
 - my recipes
+   - add recipe
    - edit recipe
 - find recipes
   - search results
