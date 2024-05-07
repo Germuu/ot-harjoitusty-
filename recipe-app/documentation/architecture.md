@@ -96,7 +96,7 @@ sequenceDiagram
 
 Overall, the sequence demonstrates the flow of interactions between the user, UI, RecipeAppService, and UserRepository during the login process, ultimately resulting in the presentation of the home view to the user upon successful authentication.
 
-### searching for recipe based on criteria
+### Recipe search
 
 ```mermaid
 sequenceDiagram
