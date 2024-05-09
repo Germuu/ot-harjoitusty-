@@ -13,7 +13,7 @@ class FindRecipesPage:
         handle_homepage: The function to handle navigating back to the homepage.
     """
 
-    def __init__(self, root, handle_search, handle_homepage):
+    def __init__(self, root, handle_search, handle_homepage, handle_random_click):
         """
         Initializes a new FindRecipesPage object.
 
@@ -26,6 +26,7 @@ class FindRecipesPage:
         self._frame = None
         self._handle_search = handle_search
         self._handle_homepage = handle_homepage
+        self._handle_random_click = handle_random_click
 
         self.initialize()
 
@@ -66,12 +67,14 @@ class FindRecipesPage:
 
         # Random Button
         random_button = tk.Button(
-            self._frame, text="Random", command=self.random_recipe, bg="#444444", fg="white")
+            self._frame, text="Random", command=self.display_random_recipe, bg="#444444", fg="white")
         random_button.grid(row=4, columnspan=2, padx=5, pady=5)
 
         # Label to display random recipe
         self.random_recipe_label = tk.Label(self._frame, text="", bg="#1E1E1E", fg="white")
         self.random_recipe_label.grid(row=5, columnspan=2, padx=5, pady=5)
+        self.random_recipe_label.bind("<Enter>", lambda event: self.random_recipe_label.config(fg="green"))
+        self.random_recipe_label.bind("<Leave>", lambda event: self.random_recipe_label.config(fg="white"))
 
         # Button to go back to homepage
         homepage_button = tk.Button(
@@ -91,9 +94,19 @@ class FindRecipesPage:
 
         self._handle_search(search_results)
 
-    def random_recipe(self):
+    def display_random_recipe(self):
         """
         Retrieves a random recipe and displays its name.
         """
         random_recipe = recipe_app_service.get_random_recipe()
         self.random_recipe_label.config(text=random_recipe.name)
+        self.random_recipe_label.bind("<Button-1>", lambda event, recipe=random_recipe: self._handle_recipe_click(recipe))
+
+    def _handle_recipe_click(self, recipe):
+        """
+        Handles the click event on a recipe frame.
+
+        Args:
+            recipe: The recipe object associated with the clicked frame.
+        """
+        self._handle_random_click(recipe)

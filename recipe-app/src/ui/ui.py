@@ -106,7 +106,8 @@ class UI:
         self._current_view = FindRecipesPage(
             self._root,
             self._show_results_view,
-            self._show_home_view
+            self._show_home_view,
+            self._show_recipe_details_view
         )
         self._current_view.pack()
 
