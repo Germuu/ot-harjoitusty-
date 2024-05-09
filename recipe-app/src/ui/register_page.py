@@ -40,14 +40,21 @@ class RegistrationPage:
 
     def register(self):
         """Handles the registration process."""
-        username = self._username_entry.get()
-        password = self._password_entry.get()
+        username = self._username_entry.get().strip()
+        password = self._password_entry.get().strip()
+
+
+        validation_result, error_message = recipe_app_service.validate_registration(username, password)
+        
+        if not validation_result:
+            messagebox.showerror("Registration Error", error_message)
+            return
 
         if recipe_app_service.register_user(username, password):
             messagebox.showinfo("Registration", "Registration successful")
             self._handle_register()
-        else:
-            messagebox.showerror("Registration Error", "Username taken")
+
+
 
     def initialize(self):
         """Initializes the registration frame."""

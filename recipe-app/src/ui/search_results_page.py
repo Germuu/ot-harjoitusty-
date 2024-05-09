@@ -95,7 +95,7 @@ class SearchResultsPage:
         Args:
             frame: The recipe frame where the mouse entered.
         """
-        frame.config(bg="lightgrey")
+        frame.config(bg="green")
 
     def _on_leave(self, frame):
         """

@@ -227,12 +227,11 @@ class RecipeAppService:
         Returns:
             tuple: A tuple containing a boolean and error message.
         """
-        # Strip leading and trailing whitespace
+
         name = name.strip()
         ingredients = ingredients.strip()
         time = time.strip()
 
-        # Length constraints
         if len(name) == 0 or len(ingredients) == 0 or len(time) == 0:
             return False, "All fields are required"
 
@@ -242,15 +241,32 @@ class RecipeAppService:
         if len(ingredients) > 100:
             return False, "Ingredients must be 100 characters or less"
 
-        # Try to convert time to integer and validate
         try:
             time = int(time)
-            if time <= 0 or time > 600:  # Maximum time set to 10 hours
+            if time <= 0 or time > 600:  
                 raise ValueError
         except ValueError:
-            return False, "Cooking time must positive and < 600"
+            return False, "Cooking time must positive and less than 600"
 
         return True, None
+    
+    def validate_registration(self, username, password):
+        if self._user_repository.find_by_username(username):
+            return False, "Username already in use"
+
+        if not username or not password:
+            return False, "Please enter both username and password"
+        if len(username)<4:
+            return False, "Username must be at least 4 characters"
+        if len(username)>15:
+            return False, "Username cannot be more than 15 characters"
+        if len(password)<5:
+            return False, "Password must be at least 5 characters"
+        
+        return True, None
+        
+
+
 
 
 recipe_app_service = RecipeAppService()
