@@ -69,17 +69,20 @@ class AddRecipePage:
         """Initializes the add recipe frame with entry fields and add button."""
         self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
 
-        name_label = tk.Label(self._frame, text="Name:", bg="#1E1E1E", fg="white")
+        name_label = tk.Label(self._frame, text="Name:",
+                              bg="#1E1E1E", fg="white")
         name_label.pack()
         self._name_entry = tk.Entry(self._frame)
         self._name_entry.pack()
 
-        ingredients_label = tk.Label(self._frame, text="Ingredients:", bg="#1E1E1E", fg="white")
+        ingredients_label = tk.Label(
+            self._frame, text="Ingredients:", bg="#1E1E1E", fg="white")
         ingredients_label.pack()
         self._ingredients_entry = tk.Entry(self._frame)
         self._ingredients_entry.pack()
 
-        time_label = tk.Label(self._frame, text="Cooking time in minutes:", bg="#1E1E1E", fg="white")
+        time_label = tk.Label(
+            self._frame, text="Cooking time in minutes:", bg="#1E1E1E", fg="white")
         time_label.pack()
         self._time_entry = tk.Entry(self._frame)
         self._time_entry.pack()

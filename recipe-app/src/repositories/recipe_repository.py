@@ -74,7 +74,6 @@ class RecipeRepository:
         self._connection.execute(query)
         self._connection.commit()
 
-
     def fetch_recipes_by_user(self, username):
         """
         Retrieve recipes from the recipes table by the specified username.

@@ -42,28 +42,32 @@ class EditRecipe:
         self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
 
         # Name
-        name_label = tk.Label(self._frame, text="Name:", bg="#1E1E1E", fg="white")
+        name_label = tk.Label(self._frame, text="Name:",
+                              bg="#1E1E1E", fg="white")
         name_label.grid(row=0, column=0, sticky="w", padx=5, pady=5)
         self._name_entry = tk.Entry(self._frame)
         self._name_entry.insert(0, self._recipe_to_edit.name)
         self._name_entry.grid(row=0, column=1, padx=5, pady=5)
 
         # Ingredients
-        ingredients_label = tk.Label(self._frame, text="Ingredients:", bg="#1E1E1E", fg="white")
+        ingredients_label = tk.Label(
+            self._frame, text="Ingredients:", bg="#1E1E1E", fg="white")
         ingredients_label.grid(row=1, column=0, sticky="w", padx=5, pady=5)
         self._ingredients_entry = tk.Entry(self._frame)
         self._ingredients_entry.insert(0, self._recipe_to_edit.ingredients)
         self._ingredients_entry.grid(row=1, column=1, padx=5, pady=5)
 
         # Max Time
-        time_label = tk.Label(self._frame, text="Max Time:", bg="#1E1E1E", fg="white")
+        time_label = tk.Label(self._frame, text="Max Time:",
+                              bg="#1E1E1E", fg="white")
         time_label.grid(row=2, column=0, sticky="w", padx=5, pady=5)
         self._max_time_entry = tk.Entry(self._frame)
         self._max_time_entry.insert(0, str(self._recipe_to_edit.cooking_time))
         self._max_time_entry.grid(row=2, column=1, padx=5, pady=5)
 
         # Save Button
-        save_button = tk.Button(self._frame, text="Save", command=self.edit, bg="#444444", fg="white")
+        save_button = tk.Button(self._frame, text="Save",
+                                command=self.edit, bg="#444444", fg="white")
         save_button.grid(row=3, columnspan=2, padx=5, pady=5)
 
     def edit(self):

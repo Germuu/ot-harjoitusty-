@@ -48,7 +48,8 @@ class MyRecipesPage:
         """Initializes the My Recipes frame."""
         self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
 
-        label = tk.Label(self._frame, text="My Recipes", bg="#1E1E1E", fg="white")
+        label = tk.Label(self._frame, text="My Recipes",
+                         bg="#1E1E1E", fg="white")
         label.pack()
 
         add_button = tk.Button(
@@ -81,7 +82,7 @@ class MyRecipesPage:
         back_button = tk.Button(self._frame, text="Back",
                                 command=self._handle_home_page, bg="#444444", fg="white")
         back_button.pack(side=tk.BOTTOM)
-    
+
     def delete_recipe(self, recipe_name):
         """
         Deletes the specified recipe.

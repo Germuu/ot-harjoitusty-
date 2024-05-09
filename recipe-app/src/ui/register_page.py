@@ -43,9 +43,9 @@ class RegistrationPage:
         username = self._username_entry.get().strip()
         password = self._password_entry.get().strip()
 
+        validation_result, error_message = recipe_app_service.validate_registration(
+            username, password)
 
-        validation_result, error_message = recipe_app_service.validate_registration(username, password)
-        
         if not validation_result:
             messagebox.showerror("Registration Error", error_message)
             return
@@ -54,18 +54,18 @@ class RegistrationPage:
             messagebox.showinfo("Registration", "Registration successful")
             self._handle_register()
 
-
-
     def initialize(self):
         """Initializes the registration frame."""
         self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
 
-        self._username_label = tk.Label(self._frame, text="Username:", bg="#1E1E1E", fg="white")
+        self._username_label = tk.Label(
+            self._frame, text="Username:", bg="#1E1E1E", fg="white")
         self._username_label.pack()
         self._username_entry = tk.Entry(self._frame)
         self._username_entry.pack()
 
-        self._password_label = tk.Label(self._frame, text="Password:", bg="#1E1E1E", fg="white")
+        self._password_label = tk.Label(
+            self._frame, text="Password:", bg="#1E1E1E", fg="white")
         self._password_label.pack()
         self._password_entry = tk.Entry(self._frame, show="*")
         self._password_entry.pack()

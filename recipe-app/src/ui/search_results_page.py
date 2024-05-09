@@ -44,10 +44,12 @@ class SearchResultsPage:
         self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
 
         if not self._search_results:
-            no_results_label = tk.Label(self._frame, text="No recipes found", bg="#1E1E1E", fg="white")
+            no_results_label = tk.Label(
+                self._frame, text="No recipes found", bg="#1E1E1E", fg="white")
             no_results_label.grid(row=0, column=0, pady=5)
 
-        back_button = tk.Button(self._frame, text="Back", command=self._handle_back, bg="#444444", fg="white")
+        back_button = tk.Button(
+            self._frame, text="Back", command=self._handle_back, bg="#444444", fg="white")
         back_button.grid(row=1, column=0, pady=5)
 
         if self._search_results:

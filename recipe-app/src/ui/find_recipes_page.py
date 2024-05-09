@@ -43,19 +43,22 @@ class FindRecipesPage:
         self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
 
         # Name
-        name_label = tk.Label(self._frame, text="Name:", bg="#1E1E1E", fg="white")
+        name_label = tk.Label(self._frame, text="Name:",
+                              bg="#1E1E1E", fg="white")
         name_label.grid(row=0, column=0, sticky="w", padx=5, pady=5)
         self.name_entry = tk.Entry(self._frame)
         self.name_entry.grid(row=0, column=1, padx=5, pady=5)
 
         # Ingredients
-        ingredients_label = tk.Label(self._frame, text="Ingredients:", bg="#1E1E1E", fg="white")
+        ingredients_label = tk.Label(
+            self._frame, text="Ingredients:", bg="#1E1E1E", fg="white")
         ingredients_label.grid(row=1, column=0, sticky="w", padx=5, pady=5)
         self.ingredients_entry = tk.Entry(self._frame)
         self.ingredients_entry.grid(row=1, column=1, padx=5, pady=5)
 
         # Max Time
-        time_label = tk.Label(self._frame, text="Max Time:", bg="#1E1E1E", fg="white")
+        time_label = tk.Label(self._frame, text="Max Time:",
+                              bg="#1E1E1E", fg="white")
         time_label.grid(row=2, column=0, sticky="w", padx=5, pady=5)
         self.max_time_entry = tk.Entry(self._frame)
         self.max_time_entry.grid(row=2, column=1, padx=5, pady=5)
@@ -71,10 +74,13 @@ class FindRecipesPage:
         random_button.grid(row=4, columnspan=2, padx=5, pady=5)
 
         # Label to display random recipe
-        self.random_recipe_label = tk.Label(self._frame, text="", bg="#1E1E1E", fg="white")
+        self.random_recipe_label = tk.Label(
+            self._frame, text="", bg="#1E1E1E", fg="white")
         self.random_recipe_label.grid(row=5, columnspan=2, padx=5, pady=5)
-        self.random_recipe_label.bind("<Enter>", lambda event: self.random_recipe_label.config(fg="green"))
-        self.random_recipe_label.bind("<Leave>", lambda event: self.random_recipe_label.config(fg="white"))
+        self.random_recipe_label.bind(
+            "<Enter>", lambda event: self.random_recipe_label.config(fg="green"))
+        self.random_recipe_label.bind(
+            "<Leave>", lambda event: self.random_recipe_label.config(fg="white"))
 
         # Button to go back to homepage
         homepage_button = tk.Button(
@@ -100,7 +106,8 @@ class FindRecipesPage:
         """
         random_recipe = recipe_app_service.get_random_recipe()
         self.random_recipe_label.config(text=random_recipe.name)
-        self.random_recipe_label.bind("<Button-1>", lambda event, recipe=random_recipe: self._handle_recipe_click(recipe))
+        self.random_recipe_label.bind(
+            "<Button-1>", lambda event, recipe=random_recipe: self._handle_recipe_click(recipe))
 
     def _handle_recipe_click(self, recipe):
         """
