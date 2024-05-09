@@ -39,6 +39,8 @@ class TestRecipeAppService(unittest.TestCase):
         recipe_app_service.logout()
         self.assertEqual(recipe_app_service.get_current_user(), None)
 
+    def test_create_recipe(self):
+        pass
 
 
 
