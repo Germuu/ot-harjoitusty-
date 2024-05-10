@@ -105,9 +105,10 @@ class FindRecipesPage:
         Retrieves a random recipe and displays its name.
         """
         random_recipe = recipe_app_service.get_random_recipe()
-        self.random_recipe_label.config(text=random_recipe.name)
-        self.random_recipe_label.bind(
-            "<Button-1>", lambda event, recipe=random_recipe: self._handle_recipe_click(recipe))
+        if random_recipe:
+            self.random_recipe_label.config(text=random_recipe.name)
+            self.random_recipe_label.bind(
+                "<Button-1>", lambda event, recipe=random_recipe: self._handle_recipe_click(recipe))
 
     def _handle_recipe_click(self, recipe):
         """
