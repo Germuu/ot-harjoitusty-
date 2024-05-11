@@ -29,62 +29,59 @@ poetry run invoke start
 ## Login
 The login view is displayed when the application is started:
 
-![login image](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/login.png)
+![Login Image](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/login.png)
 
-The user can login by typing in a username and a password and clicking "login". 
+Users can log in by entering a username and password and clicking "login".
 
 ## Register
-By clicking "register" on the login page, the user can acces the registering page:
+By clicking "register" on the login page, users can access the registration page:
 
-![register image](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/register.png)
+![Register Image](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/register.png)
 
-If the user registers successfully, she is redirected to the login view and can use the previously created credentials
+Successful registration redirects users to the login view, where they can use the newly created credentials.
 
 ## Homepage
+The homepage consolidates all relevant functionalities:
 
-The homepage contains all relevant functionalities: 
+![Homepage](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/homepage.png)
 
-![homepage](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/homepage.png)
+Users can access their own recipes or start searching for recipes.
 
-The user can either acces their own recipes or start finding recipes.
+## My Recipes
+This view allows users to manage their recipes. If users have saved recipes, they will be displayed here:
 
-## My recipes 
-The purpose of this view is to manage recipes. If the user has recipes, they will be displayed here:
+![My Recipes](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/myrecipes.png)
 
-![my recipes](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/myrecipes.png)
+Users can delete recipes by clicking the X icon next to the recipe name. Additionally, they can edit recipes by clicking on their names.
 
-The user can delete recipes by clicking on the X displayed on the right-hand side of the recipe name. Additionally, the user can edit recipes by clicking on their names.
+## Add Recipe
+Users can create a new recipe in this view:
 
-## Add recipe
+![Add Recipe](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/addrecipe.png)
 
-The user can create a recipe in the view:
+After filling in the fields, users can create a recipe by clicking "add recipe". Ingredients must be comma-separated, and users can specify units of measure if needed (e.g., tomatoes 2, pasta 300g, etc.).
 
-![add recipe](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/addrecipe.png)
+## Find Recipes
+Clicking "find recipes" on the homepage directs users to the following page:
 
-After filling in the fields, the user can create a recipe by clicking "add recipe". Ingredients must be comma-separated, and the user can input units of measure at the end of a given ingredient if needed, ex. tomatoes 2, pasta 300g, etc.
+![Find Recipes](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/findrecipes.png)
 
-## Find recipes
-
-when "find recipes" is clicked on the homepage, the user is directed to the following page:
-
-![find recipes](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/findrecipes.png)
-
-This page contains filter fields for recipes. If all/some fields are left empty, all recipes are displayed. Additionally, the user can generate a random recipe, which will be displayed under the random button. By clicking the random recipe, the user is directed to the recipe details page.
+This page contains filter fields for recipes. Leaving some or all fields empty will display all recipes. Users can also generate a random recipe, which will be displayed under the random button. Clicking on the random recipe redirects users to the recipe details page.
 
 ## Results
-After filling in the fields on the find recipes page, and clicking the "search" button, the following view is displayed:
+After filling in the fields on the find recipes page and clicking the "search" button, users see the following view:
 
-![results](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/searchresults.png)
+![Results](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/searchresults.png)
 
-Here recipes will be ranked based on matching criteria. The more ingredients match, the higher on the list the recipe will be. However, the max time filter will not display any recipes the max time of which is above the desired time.
+Recipes are ranked based on matching criteria. The more ingredients match, the higher the recipe is on the list. However, the max time filter will not display recipes with a time exceeding the desired limit.
 
-## Recipe details
+## Recipe Details
+When a recipe is clicked after either generating one randomly or searching with filters, users are directed to the following page:
 
-When a recipe is clicked after either generating one randomly, or searching with filters, the following page is displayed:
+![Recipe Details](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/recipedetails.png)
 
-![Recipe details](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/recipedetails.png)
+Here, users can inspect the recipe for further details.
 
-Here The user can inspect the recipe for use.
 
 
 
