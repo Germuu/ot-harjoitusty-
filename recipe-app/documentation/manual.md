@@ -40,6 +40,28 @@ By clicking "register" on the login page, the user can acces the registering pag
 
 If the user registers successfully, she is redirected to the login view and can use the previously created credentials
 
+## Homepage
+
+The homepage contains all relevant functionalities: 
+
+![homepage](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/homepage.png)
+
+The user can either acces their own recipes or start finding recipes.
+
+## My recipes 
+The purpose of this view is to manage recipes. If the user has recipes, they will be displayed here.
+![my recipes](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/myrecipes.png)
+
+The user can delete recipes by clicking on the X displayed on the right-hand side of the recipe name. Additionally, the user can edit recipes by clicking on their names.
+
+## Add recipe
+
+The user can create a recipe in the view:
+
+![add recipe](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/addrecipe.png)
+
+After filling in the fields, the user can create a recipe by clicking "add recipe". Ingredients must be comma-separated, and the user can input units of measure at the end of a given ingredient if needed, ex. tomatoes 2, pasta 300g, etc.
+
 
 
 
