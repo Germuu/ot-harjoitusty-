@@ -12,9 +12,16 @@ DATABASE_FILENAME=database.sqlite
 ```
 ## Launching
 Dependencies are installed with:
-bash```
+```bash
 poetry install
 ```
+
+The database is initialized with:
+```bash
+poetry run invoke init-database
+```
+
+
 
 
 
