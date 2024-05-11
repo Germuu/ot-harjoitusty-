@@ -27,8 +27,18 @@ poetry run invoke start
 ```
 
 ## Login
-
+The login view is displayed when the application is started:
 ![login image](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/login.png)
+
+The user can login by typing in a username and a password and clicking "login". 
+
+## Register
+By clicking "register" on the login page, the user can acces the registering page:
+![register image](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/register.png)
+
+If the user registers successfully, she is redirected to the login view and can use the previously created credentials
+
+
 
 
 
