@@ -63,7 +63,28 @@ The user can create a recipe in the view:
 
 After filling in the fields, the user can create a recipe by clicking "add recipe". Ingredients must be comma-separated, and the user can input units of measure at the end of a given ingredient if needed, ex. tomatoes 2, pasta 300g, etc.
 
+## Find recipes
 
+when "find recipes" is clicked on the homepage, the user is directed to the following page:
+
+![find recipes](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/findrecipes.png)
+
+This page contains filter fields for recipes. If all/some fields are left empty, all recipes are displayed. Additionally, the user can generate a random recipe, which will be displayed under the random button. By clicking the random recipe, the user is directed to the recipe details page.
+
+## Results
+After filling in the fields on the find recipes page, and clicking the "search" button, the following view is displayed:
+
+![results](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/searchresults.png)
+
+Here recipes will be ranked based on matching criteria. The more ingredients match, the higher on the list the recipe will be. However, the max time filter will not display any recipes the max time of which is above the desired time.
+
+## Recipe details
+
+When a recipe is clicked after either generating one randomly, or searching with filters, the following page is displayed:
+
+![Recipe details](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/recipedetails.png)
+
+Here The user can inspect the recipe for use.
 
 
 
