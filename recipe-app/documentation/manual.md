@@ -21,6 +21,11 @@ The database is initialized with:
 poetry run invoke init-database
 ```
 
+The application can now be started with:
+```bash
+poetry run invoke start
+```
+
 
 
 
