@@ -10,7 +10,11 @@ The contents of the .env file are:
 ```bash
 DATABASE_FILENAME=database.sqlite
 ```
-
+## Launching
+Dependencies are installed with:
+bash```
+poetry install
+```
 
 
 
