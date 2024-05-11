@@ -125,7 +125,7 @@ sequenceDiagram
 All user interactions in the application rougly follow a similar logic:
 1. User triggers an action in the UI.
 2. UI invokes relevant methods in the RecipeAppService.
-3. RecipeAppService processes the action, accessing data if needed.
+3. RecipeAppService processes the action, accessing repository data if needed.
 4. UI updates based on the processed data.
 
 
