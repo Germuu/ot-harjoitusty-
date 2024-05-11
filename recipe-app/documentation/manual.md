@@ -2,7 +2,7 @@
 
 Download the source code of the latest release by selecting *Source code* from under *Assets*.
 
-## configuration
+## Configuration
 
 The database used can be customized using the .env file located in the main directory.
 
