@@ -49,7 +49,8 @@ The homepage contains all relevant functionalities:
 The user can either acces their own recipes or start finding recipes.
 
 ## My recipes 
-The purpose of this view is to manage recipes. If the user has recipes, they will be displayed here.
+The purpose of this view is to manage recipes. If the user has recipes, they will be displayed here:
+
 ![my recipes](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/myrecipes.png)
 
 The user can delete recipes by clicking on the X displayed on the right-hand side of the recipe name. Additionally, the user can edit recipes by clicking on their names.
