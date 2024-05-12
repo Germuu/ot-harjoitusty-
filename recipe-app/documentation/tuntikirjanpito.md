@@ -17,5 +17,6 @@
 |9.5     |4 hours       | Added functionalities for user (clickable random recipe) + input validation + testing RecipeAppService                        |
 |10.5   |2 hours      | more testing                                                               |
 |11.5  |2 hours      |   Manual.md                                                             |
+|12.5  |3 hours      |   debugging recipe editing and tested application on virtual linux                                                           |
 |Total   |76.5 hours      |                                                                |
 
