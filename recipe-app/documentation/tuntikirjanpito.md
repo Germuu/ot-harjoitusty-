@@ -13,5 +13,9 @@
 |1.5     |5 hours       | learning ttkthemes and enhancing UI    |
 |2.5	   |4 hours	      | debugging issues with recipe display + general debugging  |
 |5.5     |2 hours       | added more tests                                               |
-|Total   |68 hours      |                                                                |
+|7.5     |2.5 hours       | Architecture documentation                                           |
+|9.5     |4 hours       | Added functionalities for user (clickable random recipe) + input validation + testing RecipeAppService                        |
+|10.5   |2 hours      | more testing                                                               |
+|11.5  |2 hours      |   Manual.md                                                             |
+|Total   |76.5 hours      |                                                                |
 
