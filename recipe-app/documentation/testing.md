@@ -10,5 +10,7 @@ The class *RecipeAppService* responsible for application logic is tested using t
 The classes *UserRepository* and *RecipeRepository* are tested using the classes [TestUserRepository](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/src/tests/repositories/user_repository_test.py) and [TestRecipeRepository](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/src/tests/repositories/recipe_repository_test.py) respectively.
 
 ### Test coverage
-Except 
+Except for the UI, the test coverage for the application is 73%:
+
+
 
