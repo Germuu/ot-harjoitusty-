@@ -52,7 +52,7 @@ This view allows users to manage their recipes. If users have saved recipes, the
 
 ![My Recipes](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/myrecipes.png)
 
-Users can delete recipes by clicking the X icon next to the recipe name. Additionally, they can edit recipes by clicking on their names.
+Users can delete recipes by clicking the X icon next to the recipe name. Additionally, they can edit recipes by clicking on their names. Editing fields will be displayed, and populated with the old details.
 
 ## Add Recipe
 Users can create a new recipe in this view:
