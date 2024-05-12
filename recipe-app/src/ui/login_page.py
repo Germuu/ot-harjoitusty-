@@ -77,7 +77,7 @@ class LoginPage:
         self._frame = tk.Frame(master=self._root)
 
         # Apply the theme to the frame
-        self._frame["bg"] = "#1E1E1E"  # Background color
+        self._frame["bg"] = "#1E1E1E"  
 
         username_label = tk.Label(
             self._frame, text="Username:", bg="#1E1E1E", fg="white")

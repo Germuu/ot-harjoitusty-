@@ -89,5 +89,4 @@ class EditRecipe:
             self._recipe_to_edit, new_name, new_max_time, new_ingredients)
 
         messagebox.showinfo("Success", "Recipe updated successfully")
-
         self._handle_save()
