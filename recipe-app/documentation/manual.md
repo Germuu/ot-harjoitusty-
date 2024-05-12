@@ -18,7 +18,7 @@ poetry install
 
 The database is initialized with:
 ```bash
-poetry run invoke init-database
+poetry run invoke build
 ```
 
 The application can now be started with:
