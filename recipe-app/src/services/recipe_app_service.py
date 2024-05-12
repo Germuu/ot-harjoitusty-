@@ -222,7 +222,7 @@ class RecipeAppService:
 
         return True, None
 
-    def validate_registration(self, username, password):
+    def validate_credentials(self, username, password):
         if self._user_repository.find_by_username(username):
             return False, "Username already in use"
 

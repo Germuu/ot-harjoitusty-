@@ -135,6 +135,7 @@ class UI:
 
     def _show_edit_recipe_view(self, recipe):
         """Displays the 'Edit Recipe' view."""
+        print("Showing Edit Recipe view for recipe:", recipe.name)
         self._hide_current_view()
         self._current_view = EditRecipe(
             self._root,

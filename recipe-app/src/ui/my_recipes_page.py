@@ -69,7 +69,7 @@ class MyRecipesPage:
             recipe_frame.pack(fill=tk.X, padx=20, pady=10)
 
             recipe_label = tk.Button(recipe_frame, text=recipe.name, bg="#1E1E1E", fg="white",
-                                     command=lambda name=recipe.name: self._edit_recipe(recipe))
+                                     command=lambda recipe=recipe: self._edit_recipe(recipe))
             recipe_label.pack(side=tk.LEFT, padx=10)
             recipe_label.config(font=("Helvetica", 12))
 

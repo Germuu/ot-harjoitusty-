@@ -82,6 +82,7 @@ class SearchResultsPage:
                     recipe_frame, text=f"Max Time: {recipe.cooking_time}", bg="white")
                 time_label.pack(anchor="w")
         #generated code ends
+        
     def _handle_recipe_click(self, recipe):
         """
         Handles the click event on a recipe frame.

@@ -43,7 +43,7 @@ class RegistrationPage:
         username = self._username_entry.get().strip()
         password = self._password_entry.get().strip()
 
-        validation_result, error_message = recipe_app_service.validate_registration(
+        validation_result, error_message = recipe_app_service.validate_credentials(
             username, password)
 
         if not validation_result:
