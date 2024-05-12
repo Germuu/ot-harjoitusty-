@@ -6,6 +6,8 @@ The application has been tested using automatic pytests on unit and integration 
 
 ### Application logic
 
-The class RecipeAppService responsible for handling application logic is tested using the class [TestRecpieAppService](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/src/tests/services/recipe_app_service_test.py)
+The class *RecipeAppService* responsible for application logic is tested using the class [TestRecpieAppService](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/src/tests/services/recipe_app_service_test.py)
 
+### Repository classes
 
+The classes *UserRepository* and *RecipeRepository* are tested using the classes [TestUserRepository](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/src/tests/repositories/user_repository_test.py) and [TestRecipeRepository](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/src/tests/repositories/recipe_repository_test.py) respectively.
