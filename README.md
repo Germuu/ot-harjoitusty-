@@ -2,6 +2,7 @@
 This application aims to simplify the often tedious task of deciding what to cook. Users can create and manage their recipe collections, making meal planning more efficient and enjoyable.
 
 ## DOCUMENTATION
+[Manual](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/manual.md)
 
 [Requirement specification](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/requirement_specification.md)
 
