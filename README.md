@@ -14,7 +14,7 @@ This application aims to simplify the often tedious task of deciding what to coo
 
 [Architecture](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/architecture.md)
 
-[Final release](https://github.com/Germuu/ot-harjoitustyo/releases/tag/finalrelease)
+[Final release](https://github.com/Germuu/ot-harjoitustyo/releases/tag/final_release)
 
 ## USE
 
