@@ -18,5 +18,5 @@
 |10.5   |2 hours      | more testing                                                               |
 |11.5  |2 hours      |   Manual.md                                                             |
 |12.5  |3 hours      |   debugging recipe editing and tested application on virtual linux                                                           |
-|Total   |76.5 hours      |                                                                |
+|Total   |79.5 hours      |                                                                |
 
