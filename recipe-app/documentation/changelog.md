@@ -77,6 +77,9 @@
 ### Changed
 - UI changes to add_recipe_page (buttons larger)
 
+  ### Fixed
+- fixed bug where editing targetted wrong recipes 
+
   
 
 
