@@ -13,7 +13,7 @@ The classes *UserRepository* and *RecipeRepository* are tested using the classes
 Except for the UI, the test coverage for the application is 73%:
 ![CoverageReport](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/coveragereport.PNG)
 
-##Installation and Configuration
+## Installation and Configuration
 The application has been downloaded and tested following the [Manual](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/manual.md) with Linux environments on different machines.
 
 
