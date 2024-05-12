@@ -67,6 +67,19 @@
 - only some results displayed
 - username already in use message
 
+    ## [Week 7]
+
+### Added
+- Randomly generated recipe is clickable
+- Tests for RecipeAppService
+- input validation added for user credentials
+
+### Changed
+UI changes to add_recipe_page
+
+  
+
+
 
 
 
