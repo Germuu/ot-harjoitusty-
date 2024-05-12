@@ -75,7 +75,7 @@
 - input validation added for user credentials
 
 ### Changed
-UI changes to add_recipe_page
+- UI changes to add_recipe_page (buttons larger)
 
   
 
