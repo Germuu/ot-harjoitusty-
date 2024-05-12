@@ -24,7 +24,7 @@ This application aims to simplify the often tedious task of deciding what to coo
 
 2. Initialize database using following command:
    ```bash
-   poetry run invoke init-database
+   poetry run invoke build
 
 3. Start the login window
    ```bash
