@@ -66,7 +66,7 @@ Clicking "find recipes" on the homepage directs users to the following page:
 
 ![Find Recipes](https://github.com/Germuu/ot-harjoitustyo/blob/master/recipe-app/documentation/Pictures/findrecipes.png)
 
-This page contains filter fields for recipes. Leaving some or all fields empty will display all recipes. Users can also generate a random recipe, which will be displayed under the random button. Clicking on the random recipe redirects users to the recipe details page.
+This page contains filter fields for recipes. Leaving all fields empty will display all recipes. Alternatively leaving some fields empty widens the range of filtering. Users can also generate a random recipe, which will be displayed under the random button. Clicking on the random recipe redirects users to the recipe details page.
 
 ## Results
 After filling in the fields on the find recipes page and clicking the "search" button, users see the following view:
