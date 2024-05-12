@@ -48,17 +48,17 @@ class HomePage:
         """Initializes the home page frame with welcome message and buttons."""
         self._frame = tk.Frame(master=self._root)
 
-        # Apply the theme to the frame
-        self._frame["bg"] = "#1E1E1E"  # Background color
+        # generated code starts
+        self._frame["bg"] = "#1E1E1E"
 
         label = tk.Label(
             self._frame, text=f"Welcome! {self._current_user.username}", bg="#1E1E1E", fg="white")
         label.grid(row=0, column=0, columnspan=2, pady=10)
 
-        # Apply the theme to the buttons
         button_style = ttk.Style()
         button_style.configure(
             "Dark.TButton", foreground="white", background="#444444")
+        # generated code ends
 
         my_recipes_button = ttk.Button(
             self._frame, text="My Recipes", style="Dark.TButton", command=self._handle_my_recipes)

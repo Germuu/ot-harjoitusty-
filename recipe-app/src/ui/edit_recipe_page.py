@@ -74,24 +74,20 @@ class EditRecipe:
         """
         Saves the changes made to the recipe and notifies the user.
         """
-        # Get the new values from the entry fields
+
         new_name = self._name_entry.get().strip()
         new_ingredients = self._ingredients_entry.get().strip()
         new_max_time = self._max_time_entry.get().strip()
 
-        # Validate input
         validation_result, error_message = recipe_app_service.validate_recipe_input(
             new_name, new_ingredients, new_max_time)
         if not validation_result:
             messagebox.showerror("Error", error_message)
             return
 
-        # Call the service method to update the recipe
         recipe_app_service.update_recipe(
             self._recipe_to_edit, new_name, new_max_time, new_ingredients)
 
-        # Show a success message
         messagebox.showinfo("Success", "Recipe updated successfully")
 
-        # Call the handle_save method to refresh the view or navigate back
         self._handle_save()

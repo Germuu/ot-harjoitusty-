@@ -14,8 +14,6 @@ class TestRecipeAppService(unittest.TestCase):
         self.test_password = "1234"
         self.user = recipe_app_service.register_user(
             self.test_username, self.test_password)
-        
-    
 
     def test_register_user(self):
         self.assertEqual(self.user.username, "admin")
@@ -45,10 +43,12 @@ class TestRecipeAppService(unittest.TestCase):
         self.assertEqual(recipe_app_service.get_current_user(), None)
 
     def test_create_recipe_not_exists(self):
-        test_recipe = recipe_app_service.create_recipe("pasta", "cheese, penne", 15, "admin")
+        test_recipe = recipe_app_service.create_recipe(
+            "pasta", "cheese, penne", 15, "admin")
         self.assertEqual(test_recipe.name, "pasta")
-    
+
     def test_create_recipe_exists(self):
         recipe_app_service.create_recipe("pasta", "cheese, penne", 15, "admin")
-        fail_recipe = recipe_app_service.create_recipe("pasta", "minced meat", 35, "admin")
+        fail_recipe = recipe_app_service.create_recipe(
+            "pasta", "minced meat", 35, "admin")
         self.assertEqual(fail_recipe, None)

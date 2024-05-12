@@ -51,7 +51,8 @@ class SearchResultsPage:
         back_button = tk.Button(
             self._frame, text="Back", command=self._handle_back, bg="#444444", fg="white")
         back_button.grid(row=1, column=0, pady=5)
-
+        
+        #generated code strats
         if self._search_results:
             for i, recipe in enumerate(self._search_results):
                 recipe_frame = tk.Frame(
@@ -80,7 +81,7 @@ class SearchResultsPage:
                 time_label = tk.Label(
                     recipe_frame, text=f"Max Time: {recipe.cooking_time}", bg="white")
                 time_label.pack(anchor="w")
-
+        #generated code ends
     def _handle_recipe_click(self, recipe):
         """
         Handles the click event on a recipe frame.

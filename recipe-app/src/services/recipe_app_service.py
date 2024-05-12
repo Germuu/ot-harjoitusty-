@@ -121,30 +121,6 @@ class RecipeAppService:
         """
         return self._recipe_repository.find_by_name(name)
 
-    def find_recipes_by_cooking_time(self, max_cooking_time):
-        """
-        Find recipes by maximum cooking time.
-
-        Args:
-            max_cooking_time (int): The maximum cooking time.
-
-        Returns:
-            list: A list of Recipe objects matching the criteria.
-        """
-        return self._recipe_repository.find_by_cooking_time(max_cooking_time)
-
-    def find_recipes_by_ingredients(self, ingredients):
-        """
-        Find recipes by ingredients.
-
-        Args:
-            ingredients (str): The ingredients to search for.
-
-        Returns:
-            list: A list of Recipe objects matching the criteria.
-        """
-        return self._recipe_repository.find_by_ingredients(ingredients)
-
     def fetch_recipes_by_user(self, username):
         """
         Fetch recipes by user.
