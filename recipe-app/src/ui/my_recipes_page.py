@@ -1,7 +1,5 @@
 import tkinter as tk
-from tkinter import ttk, messagebox, constants
 from services.recipe_app_service import recipe_app_service
-
 
 class MyRecipesPage:
     """
@@ -47,41 +45,45 @@ class MyRecipesPage:
     def initialize(self):
         """Initializes the My Recipes frame."""
         self._frame = tk.Frame(master=self._root, bg="#1E1E1E")
+        self._frame.pack(fill=tk.BOTH, expand=True)  # Make frame fill the window
 
         label = tk.Label(self._frame, text="My Recipes",
-                         bg="#1E1E1E", fg="white")
-        label.pack()
+                         bg="#1E1E1E", fg="white", font=("Helvetica", 20))  
+        label.pack(pady=20)  
 
         add_button = tk.Button(
-            self._frame, text="Add Recipe", command=self._handle_add, bg="#444444", fg="white")
-        add_button.pack()
+            self._frame, text="Add Recipe", command=self._handle_add, bg="#444444", fg="white", font=("Helvetica", 14))  # Increase font size
+        add_button.pack(pady=10)  
 
-        # Scrollable frame to contain recipe entries
+       
         scrollable_frame = tk.Frame(self._frame, bg="#1E1E1E")
         scrollable_frame.pack(fill=tk.BOTH, expand=True)
 
-        # Fetch recipes for the current user
+        
         recipes = recipe_app_service.fetch_recipes_by_user(
             self._current_user.username)
-
+        
+        #generated code starts
         for recipe in recipes:
             recipe_frame = tk.Frame(scrollable_frame, bg="#1E1E1E")
-            recipe_frame.pack(fill=tk.X)
+            recipe_frame.pack(fill=tk.X, padx=20, pady=10)  
 
-            # Display the recipe name
+           
             recipe_label = tk.Button(recipe_frame, text=recipe.name, bg="#1E1E1E", fg="white",
                                      command=lambda name=recipe.name: self._edit_recipe(recipe))
-            recipe_label.pack(side=tk.LEFT, padx=10, pady=5)
+            recipe_label.pack(side=tk.LEFT, padx=10)  
+            recipe_label.config(font=("Helvetica", 12))  
 
-            # Create a delete button for each recipe
+            
             delete_button = tk.Button(
                 recipe_frame, text="X", command=lambda name=recipe.name: self.delete_recipe(name), bg="#444444", fg="white")
-            delete_button.pack(side=tk.RIGHT, padx=10, pady=5)
-
-        # Back button
+            delete_button.pack(side=tk.RIGHT, padx=10)  
+            delete_button.config(font=("Helvetica", 12))  
+        #generated code ends
+        
         back_button = tk.Button(self._frame, text="Back",
-                                command=self._handle_home_page, bg="#444444", fg="white")
-        back_button.pack(side=tk.BOTTOM)
+                                command=self._handle_home_page, bg="#444444", fg="white", font=("Helvetica", 14))  # Increase font size
+        back_button.pack(side=tk.BOTTOM, pady=20)  # Add padding
 
     def delete_recipe(self, recipe_name):
         """
@@ -91,3 +93,5 @@ class MyRecipesPage:
         """
         recipe_app_service.delete_recipe(recipe_name)
         self._handle_refresh()
+
+
