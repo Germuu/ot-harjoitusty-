@@ -73,13 +73,13 @@ class MyRecipesPage:
                                      command=lambda name=recipe.name: self._edit_recipe(recipe))
             recipe_label.pack(side=tk.LEFT, padx=10)  
             recipe_label.config(font=("Helvetica", 12))  
-
+            #generated code ends
             
             delete_button = tk.Button(
                 recipe_frame, text="X", command=lambda name=recipe.name: self.delete_recipe(name), bg="#444444", fg="white")
             delete_button.pack(side=tk.RIGHT, padx=10)  
             delete_button.config(font=("Helvetica", 12))  
-        #generated code ends
+        
         
         back_button = tk.Button(self._frame, text="Back",
                                 command=self._handle_home_page, bg="#444444", fg="white", font=("Helvetica", 14))  # Increase font size
