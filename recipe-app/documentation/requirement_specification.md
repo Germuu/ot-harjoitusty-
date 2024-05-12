@@ -18,12 +18,15 @@ The application currently supports a single-user role, with the flexibility to a
 
 - **User Registration**:
   - Users can register with the system. &#10004;
-  - Usernames must be unique and at least 4 characters long.
+  - Usernames must be unique and at least 4 characters long. &#10004;
+  - Passwords must be at least 5 characters long. &#10004;
+  - Input validation &#10004;
   
 - **User Login**:
   - Users can log in to the system. &#10004;
   - Login is successful if the username and password match those in the database. &#10004;
   - If the username or password is not found in the database, an error is raised. &#10004;
+  - Input validation. &#10004;
 
 ### After Logging In
 
